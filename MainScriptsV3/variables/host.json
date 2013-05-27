@@ -1,0 +1,20 @@
+{
+  "bit64":
+    {
+      "firefox" : "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe",
+      "chrome" : "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+      "opera" : "C:\\Program Files (x86)\\Opera\\opera.exe",
+      "wlmail" : "C:\\Program Files (x86)\\Windows Live\\Mail\\wlmail.exe",
+      "outlook" : "C:\\Program Files (x86)\\Microsoft Office\\Office14\\outlook.exe",
+      "thunderbird" : "C:\\Program Files (x86)\\Mozilla Thunderbird\\thunderbird.exe"
+    },
+  "bit32":
+    {
+      "firefox":"C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "chrome":"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "opera":"C:\\Program Files\\Opera\\opera.exe",
+      "wlmail":"C:\\Program Files\\Windows Live\\Mail\\wlmail.exe",
+      "outlook":"C:\\Program Files\\Microsoft Office\\Office14\\outlook.exe",
+      "thunderbird" : "C:\\Program Files\\Mozilla Thunderbird\\thunderbird.exe"
+    }
+}

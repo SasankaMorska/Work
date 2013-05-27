@@ -1,0 +1,23 @@
+Run {@app}
+
+WaitForObject ESS/mnuMenuBar/mnuUpdate 25000
+ClickElement ESS/mnuMenuBar/mnuUpdate 
+
+WaitForObject ESS/eleUpdate/btnUpdateNow 30000
+ClickElement ESS/eleUpdate/btnUpdateNow
+
+# No, we don't know user name and password
+Case
+  When WaitForObject frmActivation/btnSkip 10000 is True
+    ClickElement frmActivation/btnSkip
+  When WaitForObject ESS/btnCloseX 50000 is True
+    ClickElement ESS/btnCloseX
+
+WaitForObject ESS/eleUpdate/lnkTroubleshoot 1200000
+Assert GetElementAttribute ESS/eleUpdate/lnkTroubleshoot Text is "Troubleshoot update issue"
+
+WaitForObject ESS/eleUpdate/btnOK 25000
+ClickElement ESS/eleUpdate/btnOK
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+

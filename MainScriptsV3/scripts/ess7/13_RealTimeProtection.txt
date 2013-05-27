@@ -1,0 +1,13 @@
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuTools 25000
+Assert Run "C:\eicar\eicar.com" is NIL
+ClickElement ESS/mnuMenuBar/mnuTools
+ClickElement ESS/eleTools/lnkLogFiles
+
+WaitForObject ESS/eleLog/celScanner 25000
+Delay 5000
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "Real-time file system protection"
+Assert GetElementAttribute ESS/eleLog/celThreat Text is "Eicar test file"
+
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX

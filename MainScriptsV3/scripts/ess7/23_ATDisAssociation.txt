@@ -1,0 +1,40 @@
+Run {@app}
+
+# enter setup
+WaitForObject ESS/mnuMenuBar/mnuSetup 40000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+# open AntiTheft menu
+WaitForObject ESS/eleSetup/btnAntiTheft 40000
+ClickElement ESS/eleSetup/btnAntiTheft
+ClickElement cmuMenu/mnuEnable
+
+# log into AT stuff to be able to deactivate AT
+InputText ESS/AntiTheftMain/txtEmail "eset.testinglab12@gmail.com"
+WaitForObject ESS/AntiTheftMain/txtPassword 10000
+ClickElement ESS/AntiTheftMain/txtPassword
+SendKey ESS/AntiTheftMain/txtPassword <t>
+SendKey ESS/AntiTheftMain/txtPassword <e>
+SendKey ESS/AntiTheftMain/txtPassword <s>
+SendKey ESS/AntiTheftMain/txtPassword <t>
+SendKey ESS/AntiTheftMain/txtPassword <l>
+SendKey ESS/AntiTheftMain/txtPassword <a>
+SendKey ESS/AntiTheftMain/txtPassword <b>
+SendKey ESS/AntiTheftMain/txtPassword <D1>
+SendKey ESS/AntiTheftMain/txtPassword <D2>
+SendKey ESS/AntiTheftMain/txtPassword <D3>
+
+# sign in
+ClickElement ESS/AntiTheftMain/btnSignIn
+
+# click deactivate button
+WaitForObject ESS/AntiTheftMain/btnDisable 40000
+ClickElement ESS/AntiTheftMain/btnDisable
+
+# check is disabled
+WaitForObject ESS/AntiTheftMain/txtDisabled 10000
+Assert Trim GetElementAttribute ESS/AntiTheftMain/txtDisabled TextValue is "Anti-Theft has been successfully disabled"
+
+# finish and close
+ClickElement ESS/AntiTheftMain/btnFinish
+ClickElement ESS/btnCloseX

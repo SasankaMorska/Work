@@ -1,0 +1,67 @@
+{
+	"w7x86_64":
+	{
+		"send_mail_imap":"w7x86_64_imap@beka.local w7x86_64_imap@beka.local",
+		"send_mail_pop":"w7x86_64@beka.local w7x86_64@beka.local"
+	},
+	"w7x86":
+	{
+		"send_mail_imap":"w7x86_imap@beka.local w7x86_imap@beka.local",
+		"send_mail_pop":"w7x86@beka.local w7x86@beka.local"
+	},
+	"wxpx86":
+	{
+		"send_mail_imap":"wxpx86_imap@beka.local wxpx86_imap@beka.local",
+		"send_mail_pop":"wxpx86@beka.local wxpx86@beka.local"
+	},
+	"xp86":
+	{
+		"send_mail_imap":"xp86_imap@automation.local xp86_imap@automation.local",
+		"send_mail_pop":"xp86_pop@automation.local xp86_pop@automation.local"
+	},
+	"xp64":
+	{
+		"send_mail_imap":"xp64_imap@automation.local xp64_imap@automation.local",
+		"send_mail_pop":"xp64_pop@automation.local xp64_pop@automation.local"
+	},
+	"vistax64":
+	{
+		"send_mail_imap":"vistax64_imap@automation.local vistax64_imap@automation.local",
+		"send_mail_pop":"vistax64_pop@automation.local vistax64_pop@automation.local"
+	},
+	"vistax86":
+	{
+		"send_mail_imap":"vistax86_imap@automation.local vistax86_imap@automation.local",
+		"send_mail_pop":"vistax86_pop@automation.local vistax86_pop@automation.local"
+	},
+	"whs2003x86":
+	{
+		"send_mail_imap":"whs2003x86_imap@automation.local whs2003x86_imap@automation.local",
+		"send_mail_pop":"whs2003x86_pop@automation.local whs2003x86_pop@automation.local"
+	},
+	"whs2011x64":
+	{
+		"send_mail_imap":"whs2011x64_imap@automation.local whs2011x64_imap@automation.local",
+		"send_mail_pop":"whs2011x64_pop@automation.local 2hs2011x64_pop@automation.local"
+	},
+	"win7x86":
+	{
+		"send_mail_imap":"win7x86_imap@automation.local win7x86_imap@automation.local",
+		"send_mail_pop":"win7x86_pop@automation.local win7x86_pop@automation.local"
+	},
+	"win7x64":
+	{
+		"send_mail_imap":"win7x64_imap@automation.local win7x64_imap@automation.local",
+		"send_mail_pop":"win7x64_pop@automation.local win7x64_pop@automation.local"
+	},
+	"win8x64":
+	{
+		"send_mail_imap":"win8x64_imap@automation.local win8x64_imap@automation.local",
+		"send_mail_pop":"win8x64_pop@automation.local win8x64_pop@automation.local"
+	},
+	"win8x86":
+	{
+		"send_mail_imap":"win8x86_imap@automation.local win8x86_imap@automation.local",
+		"send_mail_pop":"win8x86_pop@automation.local win8x86_pop@automation.local"
+	}
+}

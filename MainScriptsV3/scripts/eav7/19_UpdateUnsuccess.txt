@@ -1,0 +1,21 @@
+Run {@app}
+
+WaitForObject EAV/mnuMenuBar/mnuUpdate 25000
+ClickElement EAV/mnuMenuBar/mnuUpdate 
+
+WaitForObject EAV/eleUpdate/btnUpdateNow 30000
+ClickElement EAV/eleUpdate/btnUpdateNow
+
+# No, we don't know user name and password
+Case
+  WaitForObject frmActivation/btnSkip 50000 is True
+    ClickElement frmActivation/btnSkip
+
+WaitForObject EAV/eleUpdate/lnkTroubleshoot 1200000
+Assert GetElementAttribute EAV/eleUpdate/lnkTroubleshoot Text is "Troubleshoot update issue"
+
+WaitForObject EAV/eleUpdate/btnOK 25000
+ClickElement EAV/eleUpdate/btnOK
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX
+

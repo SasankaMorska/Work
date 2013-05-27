@@ -1,0 +1,88 @@
+# remove device with AT portal and wait 5 min
+# check information in desktop application and decide
+{_url} = Concat "https:/my.eset.com/Site/Private/Antitheft/Antitheft.aspx?seatname=" {@machine}
+{url} = Concat {_url} "#tab=tbSettings"
+
+RunParam {@firefox} {url}
+
+# enter login credentials
+
+SetLocalDelay 1
+
+WaitForObject frmFirefox/ATPortal/txtUserName 30000
+ClickElement frmFirefox/ATPortal/txtUserName
+# lol
+SendKey frmFirefox/ATPortal/txtUserName <e>
+SendKey frmFirefox/ATPortal/txtUserName <s>
+SendKey frmFirefox/ATPortal/txtUserName <e>
+SendKey frmFirefox/ATPortal/txtUserName <t>
+SendKey frmFirefox/ATPortal/txtUserName <OemPeriod>
+SendKey frmFirefox/ATPortal/txtUserName <t>
+SendKey frmFirefox/ATPortal/txtUserName <e>
+SendKey frmFirefox/ATPortal/txtUserName <s>
+SendKey frmFirefox/ATPortal/txtUserName <t>
+SendKey frmFirefox/ATPortal/txtUserName <i>
+SendKey frmFirefox/ATPortal/txtUserName <n>
+SendKey frmFirefox/ATPortal/txtUserName <g>
+SendKey frmFirefox/ATPortal/txtUserName <l>
+SendKey frmFirefox/ATPortal/txtUserName <a>
+SendKey frmFirefox/ATPortal/txtUserName <b>
+SendKey frmFirefox/ATPortal/txtUserName <D1>
+SendKey frmFirefox/ATPortal/txtUserName <D2>
+SendKey frmFirefox/ATPortal/txtUserName <Shift+D2>
+SendKey frmFirefox/ATPortal/txtUserName <g>
+SendKey frmFirefox/ATPortal/txtUserName <m>
+SendKey frmFirefox/ATPortal/txtUserName <a>
+SendKey frmFirefox/ATPortal/txtUserName <i>
+SendKey frmFirefox/ATPortal/txtUserName <l>
+SendKey frmFirefox/ATPortal/txtUserName <OemPeriod>
+SendKey frmFirefox/ATPortal/txtUserName <c>
+SendKey frmFirefox/ATPortal/txtUserName <o>
+SendKey frmFirefox/ATPortal/txtUserName <m>
+# InputText frmFirefox/ATPortal/txtUserName "eset.testinglab12@gmail.com"
+
+# enter password "testlab123"
+ClickElement frmFirefox/ATPortal/txtPassword
+SendKey frmFirefox/ATPortal/txtPassword <t>
+SendKey frmFirefox/ATPortal/txtPassword <e>
+SendKey frmFirefox/ATPortal/txtPassword <s>
+SendKey frmFirefox/ATPortal/txtPassword <t>
+SendKey frmFirefox/ATPortal/txtPassword <l>
+SendKey frmFirefox/ATPortal/txtPassword <a>
+SendKey frmFirefox/ATPortal/txtPassword <b>
+SendKey frmFirefox/ATPortal/txtPassword <D1>
+SendKey frmFirefox/ATPortal/txtPassword <D2>
+SendKey frmFirefox/ATPortal/txtPassword <D3>
+
+SetLocalDelay 1500
+
+ClickElement frmFirefox/ATPortal/btnLogin
+
+# continue navigating to test button
+WaitForObject frmFirefox/ATPortal/txtMachineName 30000
+SendKey frmFirefox/ATPortal/txtMachineName <Space>
+
+# click button
+# yes we want to remove
+# ok we have removed
+WaitForObject frmFirefox/ATPortal/btnRemoveDevice1 30000
+ClickElement frmFirefox/ATPortal/btnRemoveDevice1
+
+WaitForObject frmFirefox/ATPortal/btnRemoveDevice2 30000
+ClickElement frmFirefox/ATPortal/btnRemoveDevice2
+
+Delay 20000
+
+# close app
+ClickElement frmFirefox/btnCloseX
+
+Delay 600000
+
+# check if in setup the AT is disabled
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuSetup 30000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+# check if AT is still enabled
+Assert GetElementAttribute ESS/eleSetup/btnAntiTheft Text is "Disabled"
+

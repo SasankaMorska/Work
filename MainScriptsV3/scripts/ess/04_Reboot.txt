@@ -1,0 +1,14 @@
+# using this command seems to not work
+ExitConnectorReboot
+
+# wait for system to boot up
+Delay 300000
+
+# try to open and close application because first time after reboot
+# it takes ages
+
+Run {@app}
+
+WaitForObject ESS/mnuMenuBar/mnuHome 300000
+WaitForObject ESS/btnCloseX 50000
+ClickElement ESS/btnCloseX

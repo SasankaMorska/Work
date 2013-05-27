@@ -1,0 +1,49 @@
+# local delay may
+SetLocalDelay 1500
+
+# fire up app and save actual virus signature database version
+Run {@app}
+
+# get actual version of virus signature database
+# this is just workaround
+{version} = "7497 (20120921)"
+
+WaitForObject ESS/mnuMenuBar/mnuSetup 30000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+# enter advanced setup by keyboard shortcut
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+
+# ClickElement ESS/eleSetup/lnkEnterAdvancedSetup
+WaitForObject frmAdvancedSetup/treAdvancedSetup 60000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 4->0
+# enter advanced update setup
+WaitForObject frmAdvancedSetup/Proxy/btnAdvancedUpdateSetup 60000
+ClickElement frmAdvancedSetup/Proxy/btnAdvancedUpdateSetup
+# go to http proxy tab
+SendKey frmAdvancedSetup/Proxy/btnOK <Control+Tab>
+# enable proxy
+ClickElement frmAdvancedSetup/Proxy/rbtUseProxyServer
+# enter proxy server address and port
+InputText frmAdvancedSetup/Proxy/txtProxyServer {@proxy_server}
+InputText frmAdvancedSetup/Proxy/txtPort {@proxy_port}
+
+# Ok -> Ok
+# Can't find normal button...
+SendKey frmAdvancedSetup/Proxy/txtPort <Alt+O>
+ClickElement frmAdvancedSetup/btnOK
+
+# update virus signature database
+WaitForObject ESS/mnuMenuBar/mnuUpdate 20000
+ClickElement ESS/mnuMenuBar/mnuUpdate
+
+WaitForObject ESS/eleUpdate/btnUpdateNow 30000
+ClickElement ESS/eleUpdate/btnUpdateNow
+
+WaitForObject ESS/eleUpdate/btnUpdateNow 300000
+# check database version
+GetElementAttribute ESS/eleUpdate/lnkDbVersion Text isnot {version}
+
+# return app to basic state
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX

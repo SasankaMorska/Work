@@ -1,0 +1,91 @@
+# log into AT portal
+{_url} = Concat "https:/my.eset.com/Site/Private/Antitheft/Antitheft.aspx?seatname=" {@machine}
+{url} = Concat {_url} "#tab=tbSettings"
+
+# phantom user account auto login setup
+{phantom_autologin} = "C:/utils/prepare_phantom.reg"
+
+RunParam {@firefox} {url}
+
+# add login here please
+
+WaitForObject frmFirefox/ATPortal/txtMachineName 40000
+SendKey frmFirefox/ATPortal/txtMachineName <Space>
+
+WaitForObject frmFirefox/ATPortal/txtPhantomName 30000
+ClickElement frmFirefox/ATPortal/txtPhantomName
+
+# enable phantom
+WaitForObject frmFirefox/ATPortal/ckbEnablePhantom 30000
+ClickElement frmFirefox/ATPortal/ckbEnablePhantom
+Check frmFirefox/ATPortal/ckbEnablePhantom
+
+# select name of the phantom user => phantom
+SendKey frmFirefox/ATPortal/txtPhantomName <p>
+SendKey frmFirefox/ATPortal/txtPhantomName <h>
+SendKey frmFirefox/ATPortal/txtPhantomName <a>
+SendKey frmFirefox/ATPortal/txtPhantomName <n>
+SendKey frmFirefox/ATPortal/txtPhantomName <t>
+SendKey frmFirefox/ATPortal/txtPhantomName <o>
+SendKey frmFirefox/ATPortal/txtPhantomName <m>
+
+# scroll down to update button
+SendKey frmFirefox/ATPorta/txtMachineName <Space>
+
+# see button?
+WaitForObject frmFirefox/ATPortal/btnUpdateSettings 30000
+ClickElement frmFirefox/ATPortal/btnUpdateSettings
+
+# now wait for about 2-3 minutes
+
+Delay 120000
+
+# prepare autologin into phantom account
+{arg} = Concat "/S" {phantom_autologin}
+RunParam "c:/windows/regedit.exe" {arg}
+
+Delay 10000
+
+VmTakeSnapshop before_phantom
+
+ExitConnectorReboot
+
+Delay 330000
+
+# RemoteRun to check if phantom account is logged
+# use command:
+# wmic /node: 10.1.190.xx computersystem get username
+#
+# host should be IP address of machine, but this works too
+{check_file_temp} = Concat "c:/utils/" {@machine}
+{check_file} = Concat {check_file_temp} "_ok.bat"
+{host} = Concat "--host " {@machine}
+{name} = Concat " --name " {@machine}
+
+{args} = Concat {host} {name}
+
+# check if user is logged by running this script
+RemoteRunParam "http://10.1.190.10:11000" "C:/utils/checkuser.exe" {args}
+
+Delay 10000
+
+# if normal user is NOT logged this file WILL execute
+Assert RemoteRun "http://10.1.190.10:11000" {check_file} is True
+
+# now we have suspicious state -> move everything how it was before
+# loggin phantom in
+VmRevertSnapshot before_phantom
+
+Delay 60000
+
+VmRemoveSnapshot before_phantom
+
+# wait for a while, just to be sure
+Delay 30000
+
+RunParam {@firefox} {arg}
+
+WaitForObject frmFirefox/ATPortal/txtStatus 40000
+# toto s iným jazykom nebude fungovat. musi byt anglictina na AT potali
+Assert frmFirefox/AtPortal/txtStatus Text is "Suspicious"
+

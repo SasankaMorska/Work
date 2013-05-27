@@ -1,0 +1,22 @@
+# enable protocol filtering
+Run {@app}
+
+WaitForObject EAV/mnuMenuBar/mnuSetup 30000
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+Case
+  When WaitForObject EAV/btnMaximize 20000 is True
+    ClickElement EAV/btnMaximize
+
+# enter advanced setup
+WaitForObject EAV/eleSetup/lnkEnterAdvancedSetup 30000
+ClickElement EAV/eleSetup/lnkEnterAdvancedSetup
+
+WaitForObject frmAdvancedSetup/treAdvancedSetup 30000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->2
+Check frmAdvancedSetup/ProtocolFiltering/ckbEnableProtocolFiltering
+ClickElement frmAdvancedSetup/btnOK
+
+WaitForObject EAV/mnuMenuBar/mnuSetup 30000
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

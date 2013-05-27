@@ -1,0 +1,28 @@
+{
+"eav":
+  {
+    "path":"C:\\Program Files\\ESET\\ESET NOD32 Antivirus\\egui.exe",
+    "sys_inspector":"C:\\Program Files\\ESET\\ESET NOD32 Antivirus\\SysInspector.exe",
+    "bit64":
+      {
+        "install":"C:\\install\\eav_nt64_ENU.msi"
+      },
+    "bit32":
+      {
+        "install":"C:\\install\\eav_nt32_ENU.msi"
+      }
+  },
+"ess":
+  {
+    "path":"C:\\Program Files\\ESET\\ESET Smart Security\\egui.exe",
+    "sys_inspector":"C:\\Program Files\\ESET\\ESET Smart Security\\SysInspector.exe",
+    "bit64":
+      {
+        "install":"C:\\install\\ess_nt64_ENU.msi"
+      },
+    "bit32":
+      {
+        "install":"C:\\install\\ess_nt32_ENU.msi"
+      }
+  }
+}

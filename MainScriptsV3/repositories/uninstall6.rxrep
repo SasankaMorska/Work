@@ -1,0 +1,95 @@
+﻿<repository
+name="uninstall"
+id="838bce3d-37f6-47a0-9493-51496d4e2e52"
+rxversion="4.0.0.20817">
+	<codegen
+	classname="uninstall"
+	namespace="MyTestProject"/>
+	<rootfolder
+	name="Root"
+	id="7cb5b1e3-295e-49b6-b31e-82a94bf336b1"
+	searchtimeout="30000ms"
+	capname="host"
+	isrooted="True"
+	usecache="False">
+		<appfolder
+		name="EssSetup"
+		id="45bea925-844f-4e53-984e-213cd1a27714"
+		searchtimeout="30000ms"
+		capname="form"
+		addcaps="form,nativewindow"
+		isrooted="True"
+		usecache="True">
+			<item
+			name="btnNext"
+			id="a5a4c6f9-6d1a-4dea-b2ff-e987dd14f11d"
+			searchtimeout="30000ms"
+			capname="button"
+			addcaps="button,nativewindow">
+				/form[@processname='msiexec']/button[@childindex=5]
+			</item>
+			<item
+			name="btnRemoveInstallation"
+			id="2b514dcb-2a44-499b-ad4c-4675e8f4b81f"
+			searchtimeout="30000ms"
+			capname="button"
+			addcaps="button,nativewindow">
+				/form[@processname='msiexec']/button[@childindex=8]
+			</item>
+			<item
+			name="ckbOtherReason"
+			id="54bb95dc-ee1b-4dbd-bcd9-04b498b31802"
+			searchtimeout="30000ms"
+			capname="checkbox"
+			addcaps="checkbox,nativewindow">
+				/form[@processname='msiexec']/checkbox[@childindex=15]
+			</item>
+			<item
+			name="btnFinish"
+			id="f9d0b0ee-e603-45b4-b5fb-ac9fe6e9197a"
+			searchtimeout="30000ms"
+			capname="button"
+			addcaps="button,nativewindow">
+				/form[@processname='msiexec']/button[@childindex=5]
+			</item>
+			<item
+			name="btnNo"
+			id="2705bd4a-363b-4608-9502-cfc28cac872f"
+			searchtimeout="30000ms"
+			capname="button"
+			addcaps="button,nativewindow">
+				/form[@processname='msiexec']/button[@childindex=1]
+			</item>
+			<item
+			name="btnQuestionNext"
+			id="24243bc7-8712-48ed-ae01-368ac98e829d"
+			searchtimeout="30000ms"
+			capname="button"
+			addcaps="button,nativewindow">
+				/form[@processname='msiexec']/button[@childindex=18]
+			</item>
+			<item
+			name="btnRemove"
+			id="a21ebefa-7c6c-461e-93aa-f2eff496258f"
+			searchtimeout="30000ms"
+			capname="button"
+			addcaps="button,nativewindow">
+				/form[@processname='msiexec']/button[@childindex=7]
+			</item>
+			<basepath>
+				/form[@processname='msiexec']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAD0SURBVDhPlZLBEYQgDEXpiYK80YLXPdkDNw9b
+gRVYAHcLsBA2D4gbXXXcP/NnMPCfIequNAxDvhP7cgyfqx545ZBy9hLATswzegzQMCbsYiX8DdDw
+LYCiygJs2Ae7bwAUuq4rfo/jBjjzDsBCpWEFzPN86Q2gb9eCBdx5mqYvoDWwA/R9L3ePOaVQ7L3f
+AejiFMAmV/EysBCjVCsE6PEal4B1XbNPMvEGoV0Cy7KUTlqwhlGSw1iWBRAlpKaGCbPXAHsdAax5
+qw6KjjDPjwAMUNtmBo5ucioQzpSQlQWoCSf5CgCYBxBz/x/ZsGr7M08HV+TcB6GgAijmjAHLAAAA
+AElFTkSuQmCC
+			</icon>
+		</appfolder>
+		<basepath/>
+	</rootfolder>
+	<variables/>
+</repository>

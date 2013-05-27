@@ -1,0 +1,59 @@
+# run script to prepare xml to import domain user into parental control
+Run {@prepare_parental_import}
+
+Delay 2000
+
+# file to import is now at c:\utils\import_parental.xml
+Run {@app}
+
+WaitForObject ESS/mnuMenuBar/mnuSetup 25000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+Case
+  When WaitForObject ESS/btnMaximize 20000 is True
+    ClickElement ESS/btnMaximize
+
+WaitForObject ESS/eleSetup/lnkImportAndExportSettings 30000
+ClickElement ESS/eleSetup/lnkImportAndExportSettings
+
+WaitForObject frmImport/rbtImportSettings 10000
+ClickElement frmImport/rbtImportSettings
+
+WaitForObject frmImport/txtPath 10000
+InputText frmImport/txtPath "c:\utils\parental_import.xml"
+ClickElement frmImport/btnOK
+
+# setup -> enable parental control
+WaitForObject ESS/eleSetup/btnParentalControl 30000
+ClickElement ESS/eleSetup/btnParentalControl
+
+WaitForObject cmuMenu/mnuEnable 30000
+ClickElement cmuMenu/mnuEnable
+
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+
+# try to access cas.sk -> nope
+RunParam {@firefox} "http://www.cas.sk"
+
+# check browser title
+WaitForObject frmFirefox 30000
+Delay 10000
+{ff} = GetElementAttribute frmFirefox Title
+Assert {ff} like "Parental"
+
+WaitForObject frmFirefox/btnCloseX 20000
+ClickElement frmFirefox/btnCloseX
+
+# try to access sme.sk -> oh yeah
+RunParam {@firefox} "http://www.sme.sk"
+
+# check browser title
+WaitForObject frmFirefox 30000
+Delay 10000
+{ff} = GetElementAttribute frmFirefox Title
+Assert {ff} likenot "Parental"
+
+WaitForObject frmFirefox/btnCloseX 20000
+ClickElement frmFirefox/btnCloseX
+

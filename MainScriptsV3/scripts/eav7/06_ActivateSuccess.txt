@@ -1,0 +1,56 @@
+# local delay because of failing tests
+SetLocalDelay 1500
+
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuSetup 30000
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+Case
+  When WaitForObject EAV/btnMaximize 10000 is True
+    ClickElement EAV/btnMaximize
+
+WaitForObject EAV/eleSetup/lnkProductActivation 40000
+ClickElement EAV/eleSetup/lnkProductActivation
+
+WaitForObject frmActivation/btnUsername 40000
+ClickElement frmActivation/btnUsername
+ClickElement frmActivation/btnNext
+
+# insert user name
+WaitForObject frmActivation/txtUser 40000
+InputText frmActivation/txtUser "kajci"
+ClickElement frmActivation/txtPassword
+
+# send keystrokes
+SendKey frmActivation/txtPassword <l>
+SendKey frmActivation/txtPassword <o>
+SendKey frmActivation/txtPassword <l>
+SendKey frmActivation/txtPassword <o>
+SendKey frmActivation/txtPassword <f>
+SendKey frmActivation/txtPassword <o>
+SendKey frmActivation/txtPassword <n>
+
+# activate
+ClickElement frmActivation/btnActivate
+WaitForObject frmActivation/btnFinish 30000
+ClickElement frmActivation/btnFinish
+
+# if update is running, stop updating
+WaitForObject EAV/mnuMenuBar/mnuUpdate 30000
+ClickElement EAV/mnuMenuBar/mnuUpdate
+
+# if update is running, stop it
+Case
+  When WaitForObject EAV/eleUpdate/btnCancelUpdate 10000 is True
+    # don't fail test, because cancel button could be already gone
+    OnErrorContinue
+    ClickElement EAV/eleUpdate/btnCancelUpdate
+    WaitForObject EAV/eleUpdate/btnOK 20000
+    ClickElement EAV/eleUpdate/btnOK
+    OnErrorStop
+
+# close application window
+WaitForObject EAV/mnuMenuBar/mnuHome 30000
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX
+

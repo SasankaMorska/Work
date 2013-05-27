@@ -1,0 +1,88 @@
+# local delay
+SetLocalDelay 1500
+
+## 2min Gamer Mode TestCase
+
+# clear logs if any
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+
+# tools use to load much more slowly => wait more time
+WaitForObject ESS/eleTools/lnkLogFiles 60000
+ClickElement ESS/eleTools/lnkLogFiles
+
+# remove previous logs
+Case
+  When WaitForObject ESS/eleLog/celScanner 10000 is True
+    Delay 2000
+    ClickElement ESS/eleLog/celScanner
+    SendKey ESS/eleLog/celScanner <Control+A>
+    SendKey ESS/eleLog/celScanner <Delete>
+    WaitForObject ESS/btnYes 10000
+    Delay 2000
+    ClickElement ESS/btnYes
+
+WaitForObject ESS/mnuMenuBar/mnuHome 30000
+ClickElement ESS/mnuMenuBar/mnuHome
+
+WaitForObject ESS/btnCloseX 20000
+ClickElement ESS/btnCloseX
+
+# fire up firefox and try to download stuff
+RunParam {@firefox} "http://eicar.org/download/eicar.com"
+
+# check if notification pop-up
+Assert WaitForObject ESS/txtPopup 10000 is True
+ClickElement frmFirefox/btnCloseX
+
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+
+WaitForObject ESS/eleTools/lnkLogFiles 30000
+ClickElement ESS/eleTools/lnkLogFiles
+
+WaitForObject ESS/eleLog/celScanner 30000
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "HTTP filter"
+
+# clear log
+ClickElement ESS/eleLog/celScanner
+SendKey ESS/eleLog/celScanner <Control+A>
+SendKey ESS/eleLog/celScanner <Delete>
+WaitForObject ESS/btnYes 20000
+ClickElement ESS/btnYes
+
+WaitForObject ESS/mnuMenuBar/mnuSetup 30000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+# enable gamer mode
+WaitForObject ESS/eleSetup/btnGamerMode 20000
+ClickElement ESS/eleSetup/btnGamerMode
+WaitForObject cmuMenu/mnuEnable 30000
+ClickElement cmuMenu/mnuEnable
+
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+
+# try to donwload eicar.com with firefox
+RunParam {@firefox} "http://eicar.org/download/eicar.com"
+Assert WaitForObject ESS/txtPopup 20000 is NIL
+WaitForObject frmFirefox/btnCloseX 60000
+ClickElement frmFirefox/btnCloseX
+
+# Check logs
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+
+WaitForObject ESS/eleTools/lnkLogFiles 30000
+ClickElement ESS/eleTools/lnkLogFiles
+
+WaitForObject ESS/eleLog/celScanner 30000
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "HTTP filter"
+
+ClickElement ESS/mnuMenuBar/mnuHome
+WaitForObject ESS/mnuMenuBar/mnuHome 30000
+ClickElement ESS/btnCloseX
+

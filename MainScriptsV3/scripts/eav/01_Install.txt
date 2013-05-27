@@ -1,0 +1,51 @@
+# local delay
+SetLocalDelay 1500
+
+# start installation of ESS / EAV
+Run {@install}
+WaitForObject EssSetup/btnNext 50000
+WaitForElementAttribute EssSetup/btnNext Enabled True 20000
+
+# next
+ClickElement EssSetup/btnNext
+
+# Clicking button right after Wait causes to accidentally click on "cancel"
+# button? This is kind of solution
+Case
+  When WaitForObject EssSetup/CancelInstall/btnNo 10000 is True
+    # when ranorex canceled the installation, cancel the cancel
+    ClickElement EssSetup/CancelInstall/btnNo
+    # try to click next button again
+    WaitForObject EssSetup/btnNext 10000
+    ClickElement EssSetup/btnNext
+
+# user licence
+WaitForObject EssSetup/EndUserLicenseAgreement/rbtAccept 30000
+Delay 2000
+ClickElement EssSetup/EndUserLicenseAgreement/rbtAccept
+ClickElement EssSetup/EndUserLicenseAgreement/btnNext
+
+# select typical installation
+ClickElement EssSetup/InstallationMode/rbtTypical
+ClickElement EssSetup/InstallationMode/btnNext
+
+# no live grid
+Uncheck EssSetup/ESETLiveGrid/ckbAgree
+ClickElement EssSetup/ESETLiveGrid/btnNext
+
+# select combo unwanted applications
+SelectByIndex EssSetup/DetectionOfPotentiallyUnwantedApplications/cmbDetection 1
+ClickElement EssSetup/DetectionOfPotentiallyUnwantedApplications/btnNext
+
+# install product
+ClickElement EssSetup/ReadyToInstall/btnInstall
+
+# wait for finish button
+Delay 300000
+ClickElement EssSetup/btnFinish
+
+# last popup about network settings
+Case
+  When WaitForObject frmNetwork/lnkHomeNetwork 50000 is True
+    ClickElement frmNetwork/lnkHomeNetwork
+

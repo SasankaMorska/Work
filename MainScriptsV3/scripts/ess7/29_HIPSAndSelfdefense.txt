@@ -1,0 +1,25 @@
+# try to move some dll
+Run {@test_eset}
+Delay 5000
+
+# I can't access return value from direct command, so
+# on fail, I create a file
+Assert Run {@fail_file} is True
+Run {@clean_test_files}
+Delay 5000
+
+# Registry test
+Run {@test_registry}
+Delay 5000
+
+Assert Run {@fail_file} is True
+Run {@clean_test_files}
+Delay 5000
+
+# try to remove driver in %SYSTEMROOT%/System32/Drivers/ehdrv.sys
+Run {@test_driver}
+Delay 10000
+
+Assert Run {@fail_file} is True
+Run {@clean_test_files}
+

@@ -1,0 +1,21 @@
+RunParam {@firefox} "https://secure.eicar.org/eicar.com"
+WaitForObject frmFirefox/btnCloseX 30000
+ClickElement frmFirefox/btnCloseX
+
+Run{@app}
+
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+# navigate to Log Files
+WaitForObject EAV/eleTools/lnkLogFiles 30000
+ClickElement EAV/eleTools/lnkLogFiles
+
+# check if there is http filter
+WaitForObject EAV/eleLog/celScanner 60000
+Assert GetElementAttribute EAV/eleLog/celScanner Text is "HTTP filter"
+Assert GetElementAttribute EAV/eleLog/celThreat Text is "Eicar test file"
+
+# return application to base state
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

@@ -1,0 +1,75 @@
+# for given device, log in and start test
+
+{_url} = Concat "https:/my.eset.com/Site/Private/Antitheft/Antitheft.aspx?seatname=" {@machine}
+{url} = Concat {_url} "#tab=tbStatus"
+
+RunParam {@firefox} {url}
+
+Delay 10000
+
+# enter login credentials
+
+WaitForObject frmFirefox/ATPortal/txtUserName 30000
+ClickElement frmFirefox/ATPortal/txtUserName
+# lol
+SetLocalDelay 1
+SendKey frmFirefox/ATPortal/txtUserName <e>
+SendKey frmFirefox/ATPortal/txtUserName <s>
+SendKey frmFirefox/ATPortal/txtUserName <e>
+SendKey frmFirefox/ATPortal/txtUserName <t>
+SendKey frmFirefox/ATPortal/txtUserName <OemPeriod>
+SendKey frmFirefox/ATPortal/txtUserName <t>
+SendKey frmFirefox/ATPortal/txtUserName <e>
+SendKey frmFirefox/ATPortal/txtUserName <s>
+SendKey frmFirefox/ATPortal/txtUserName <t>
+SendKey frmFirefox/ATPortal/txtUserName <i>
+SendKey frmFirefox/ATPortal/txtUserName <n>
+SendKey frmFirefox/ATPortal/txtUserName <g>
+SendKey frmFirefox/ATPortal/txtUserName <l>
+SendKey frmFirefox/ATPortal/txtUserName <a>
+SendKey frmFirefox/ATPortal/txtUserName <b>
+SendKey frmFirefox/ATPortal/txtUserName <D1>
+SendKey frmFirefox/ATPortal/txtUserName <D2>
+SendKey frmFirefox/ATPortal/txtUserName <Shift+D2>
+SendKey frmFirefox/ATPortal/txtUserName <g>
+SendKey frmFirefox/ATPortal/txtUserName <m>
+SendKey frmFirefox/ATPortal/txtUserName <a>
+SendKey frmFirefox/ATPortal/txtUserName <i>
+SendKey frmFirefox/ATPortal/txtUserName <l>
+SendKey frmFirefox/ATPortal/txtUserName <OemPeriod>
+SendKey frmFirefox/ATPortal/txtUserName <c>
+SendKey frmFirefox/ATPortal/txtUserName <o>
+SendKey frmFirefox/ATPortal/txtUserName <m>
+# InputText frmFirefox/ATPortal/txtUserName "eset.testinglab12@gmail.com"
+
+SetLocalDelay 1500
+
+# enter password "testlab123"
+ClickElement frmFirefox/ATPortal/txtPassword
+SendKey frmFirefox/ATPortal/txtPassword <t>
+SendKey frmFirefox/ATPortal/txtPassword <e>
+SendKey frmFirefox/ATPortal/txtPassword <s>
+SendKey frmFirefox/ATPortal/txtPassword <t>
+SendKey frmFirefox/ATPortal/txtPassword <l>
+SendKey frmFirefox/ATPortal/txtPassword <a>
+SendKey frmFirefox/ATPortal/txtPassword <b>
+SendKey frmFirefox/ATPortal/txtPassword <D1>
+SendKey frmFirefox/ATPortal/txtPassword <D2>
+SendKey frmFirefox/ATPortal/txtPassword <D3>
+
+ClickElement frmFirefox/ATPortal/btnLogin
+
+# continue navigating to test button
+WaitForObject frmFirefox/ATPortal/txtMachineName 30000
+SendKey frmFirefox/ATPortal/txtMachineName <Space>
+
+# Click test button and wait? until it is finished.
+WaitForObject frmFirefox/ATPortal/btnStartTest 30000
+ClickElement frmFirefox/ATPortal/btnStartTest
+
+# wait until popup show up and want to create snapshot
+WaitForObject frmAntiTheft/btnYes 600000
+ClickElement frmAntiTheft/btnYes
+
+WaitForObject frmFirefox/ATPortal/tblScreenshot 600000
+

@@ -1,0 +1,27 @@
+{
+"system":
+	{
+	"bit64":
+		{
+			"install":
+				{
+					"ess":"X:\\ClientInstall\\ess_nt64_ENU.msi",
+					"eav":"X:\\ClientInstall\\eav_nt64_ENU.msi"
+				},
+			"firefox":"C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe",
+			"wlmail":"C:\\Program Files (x86)\\Windows Live\\Mail\\wlmail.exe",
+			"outlook":"C:\\Program Files (x86)\\Microsoft Office\\Office14\\outlook.exe"
+		},
+	"bit32":
+		{
+			"install":
+				{
+					"ess":"X:\\ClientInstall\\ess_nt32_ENU.msi",
+					"eav":"X:\\ClientInstall\\eav_nt32_ENU.msi"
+				},
+			"firefox":"C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+			"wlmail":"C:\\Program Files\\Windows Live\\Mail\\wlmail.exe",
+			"outlook":"C:\\Program Files\\Microsoft Office\\Office14\\outlook.exe"
+		}
+	}
+}

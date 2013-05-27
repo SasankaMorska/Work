@@ -1,0 +1,85 @@
+# local delay
+SetLocalDelay 1500
+
+## 2min Gamer Mode TestCase
+
+# clear logs if any
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+
+# tools use to load much more slowly => wait more time
+WaitForObject ESS/eleTools/lnkLogFiles 60000
+ClickElement ESS/eleTools/lnkLogFiles
+
+Case
+  When WaitForObject ESS/eleLog/celScanner 30000 is True
+    Delay 2000
+    ClickElement ESS/eleLog/celScanner
+    SendKey ESS/eleLog/celScanner <Control+A>
+    SendKey ESS/eleLog/celScanner <Delete>
+    WaitForObject ESS/btnYes 20000
+    ClickElement ESS/btnYes
+
+# enable gamer mode for 2 minutes
+ClickElement ESS/mnuMenuBar/mnuSetup
+WaitForObject ESS/eleSetup/btnRealTimeProtect 20000
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+
+WaitForObject frmAdvancedSetup/treAdvancedSetup 30000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 6->5
+Check frmAdvancedSetup/GamerMode/ckbEnable
+Check frmAdvancedSetup/GamerMode/ckbEnableTime
+InputText frmAdvancedSetup/GamerMode/txtTime "2"
+ClickElement frmAdvancedSetup/GamerMode/btnOK
+
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+
+# try to donwload eicar.com with firefo
+RunParam {@firefox} "http://eicar.org/download/eicar.com"
+Assert WaitForObject ESS/txtPopup 10000 is NIL
+WaitForObject frmFirefox/btnCloseX 60000
+ClickElement frmFirefox/btnCloseX
+
+# Check logs
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+WaitForObject ESS/eleTools/lnkLogFiles 20000
+ClickElement ESS/eleTools/lnkLogFiles
+
+WaitForObject ESS/eleLog/celScanner 20000
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "HTTP filter"
+
+# clear log
+ClickElement ESS/eleLog/celScanner
+SendKey ESS/eleLog/celScanner <Control+A>
+SendKey ESS/eleLog/celScanner <Delete>
+WaitForObject ESS/btnYes 10000
+ClickElement ESS/btnYes
+
+WaitForObject ESS/mnuMenuBar/mnuHome 20000
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+
+# now wait for 2 minutes
+Delay 120000
+
+# fire up firefox and try to download stuff
+RunParam {@firefox} "http://eicar.org/download/eicar.com"
+# check if notification pop-up
+Assert WaitForObject ESS/txtPopup 10000 is True
+ClickElement frmFirefox/btnCloseX
+
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+WaitForObject ESS/eleTools/lnkLogFiles 30000
+ClickElement ESS/eleTools/lnkLogFiles
+
+WaitForObject ESS/eleLog/celScanner 20000
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "HTTP filter"
+
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX

@@ -1,0 +1,17 @@
+# enable protocol filtering
+Run {@app}
+
+WaitForObject EAV/mnuMenuBar/mnuSetup 30000
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+# enter advanced setup
+SendKey EAV/mnuMenuBar/mnuSetup <F5>
+
+WaitForObject frmAdvancedSetup/treAdvancedSetup 30000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->2
+Check frmAdvancedSetup/ProtocolFiltering/ckbEnableProtocolFiltering
+ClickElement frmAdvancedSetup/btnOK
+
+WaitForObject EAV/mnuMenuBar/mnuSetup 30000
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

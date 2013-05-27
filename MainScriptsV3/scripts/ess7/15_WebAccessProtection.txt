@@ -1,0 +1,19 @@
+RunParam {@firefox} "http://eicar.org/download/eicar.com"
+WaitForObject frmFirefox 20000
+//Assert GetElementAttribute frmFirefox/btnTryAgain Text is "Try Again"
+ClickElement frmFirefox/btnCloseX
+
+Run {@app}
+
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+
+WaitForObject ESS/eleTools/lnkLogFiles 30000
+ClickElement ESS/eleTools/lnkLogFiles
+
+WaitForObject ESS/eleLog/celScanner
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "HTTP filter"
+Assert GetElementAttribute ESS/eleLog/celThreat Text is "Eicar test file"
+
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX

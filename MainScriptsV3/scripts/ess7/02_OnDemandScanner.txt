@@ -1,0 +1,42 @@
+# set local delay because click after wait fails from time to time
+SetLocalDelay 1500
+
+# go to computer scan and select custom scan
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuComputerScan 120000
+ClickElement ESS/mnuMenuBar/mnuComputerScan
+
+WaitForObject ESS/eleComputerScan/lnkCustomScan 30000
+ClickElement ESS/eleComputerScan/lnkCustomScan
+
+WaitForObject ESS/ComputerScan/cmbScanTargets 20000
+SendKey ESS/ComputerScan/cmbScanTargets <Up>
+SendKey ESS/ComputerScan/cmbScanTargets <Up>
+SendKey ESS/ComputerScan/cmbScanTargets <Up>
+SendKey ESS/ComputerScan/cmbScanTargets <Up>
+SendKey ESS/ComputerScan/cmbScanTargets <Up>
+# better would be:
+# While GetAttibute ESS/ComputerScan/cmbScanTargets Text is "By profile bla bla"
+#   SendKey ESS/ComputerScan/cmbScanTargets <Up>
+
+# input path to eicar folder
+InputText ESS/ComputerScan/txtPath "C:\eicar\"
+ClickElement ESS/ComputerScan/btnScan
+
+WaitForObject ESS/btnClose 20000
+ClickElement ESS/lnkShowLog
+
+# extract piece of text from log
+WaitForObject ESS/celNrOfCleaned 20000
+{trim} = Trim GetElementAttribute ESS/celNrOfCleaned Text
+
+# check whether number of found infiltration is correct
+Assert {trim} is "Number of cleaned objects: 4"
+
+# close results window
+ClickElement ESS/btnCloseX
+ClickElement ESS/btnClose
+
+# return app to basic state
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX

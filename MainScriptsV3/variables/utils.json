@@ -1,0 +1,19 @@
+{
+  "eicar": "C:\\utils\\wget.bat",
+  "reboot": "C:\\utils\\restart.bat",
+  "send_mail": "C:\\utils\\sendImap.bat",
+  "send_viagra": "C:\\utils\\sendViagra.bat",
+  "import": "C:\\install\\import.xml",
+  "uninstall": "C:\\utils\\uninstall.bat",
+  "proxy_server": "10.1.190.10",
+  "extract_docs": "C:\\utils\\unzipDocs.bat",
+  "prepare_parental_import": "C:\\utils\\parental_import.bat",
+  "test_eset": "C:\\utils\\test_eset.bat",
+  "test_registry": "C:\\utils\\test_registry.bat",
+  "test_driver": "C:\\utils\\test_driver.bat",
+  "clean_test_files": "C:\\utils\\clean_result_files.bat",
+  "fail_file": "C:\\utils\\fail.bat",
+  "autologin_registry": "C:\\utils\\password.reg",
+  "checkuser": "C:\\utils\\checkuser.exe",
+  "proxy_port": "2347"
+  }

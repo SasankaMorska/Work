@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites time='0:00:22.077000' tests='1' failures='0' errors='0'>
+<testsuite name='foo' tests='1' failures='0' errors='0' skipped='0' time='0:00:22.077000' timestamp='2013-05-13 11:39:59.727000'>
+<testcase name='foo' assertions='0' time='0:00:22.077000' classname='foo' status='Pass'>
+<system-out>
+<![CDATA[
+    {@eset} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/eset.json" -> Pass
+    {@host} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/host.json" -> Pass
+    {@emails} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/emails.json" -> Pass
+    {@utils} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/utils.json" -> Pass
+    {@app} = {@eset} . {@product} . "path" -> Pass
+    {@sys_inspector} = {@eset} . {@product} . "sys_inspector" -> Pass
+    {@firefox} = {@host} . {@bit} . "firefox" -> Pass
+    {@outlook} = {@host} . {@bit} . "outlook" -> Pass
+    {@wlmail} = {@host} . {@bit} . "wlmail" -> Pass
+    {@thunderbird} = {@host} . {@bit} . "thunderbird" -> Pass
+    {@install} = {@eset} . {@product} . {@bit} . "install" -> Pass
+    {@uninstall} = {@eset} . {@product} . {@bit} . "install" -> Pass
+    {@mail_imap} = {@emails} . {@machine} . "send_mail_imap" -> Pass
+    {@mail_pop} = {@emails} . {@machine} . "send_mail_pop" -> Pass
+    {@import_path} = {@utils} . "import" -> Pass
+    {@eicar_download} = {@utils} . "eicar" -> Pass
+    {@send_mail} = {@utils} . "send_mail" -> Pass
+    {@send_viagra} = {@utils} . "send_viagra" -> Pass
+    {@proxy_server} = {@utils} . "proxy_server" -> Pass
+    {@proxy_port} = {@utils} . "proxy_port" -> Pass
+    LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/ess7.rxrep" -> Pass
+    {arg} = Concat "C:\remove.ps1 " {@machine} -> Pass
+    RemoteRunParam 'http://10.1.190.11:11000' "powershell" {arg} -> Pass]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

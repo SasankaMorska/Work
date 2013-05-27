@@ -1,0 +1,91 @@
+# REGRESSION SUIT ESS / EAV
+#
+# ---- Commandline arguments
+#
+# {@bit} defines architecture of OS
+# {@machine} is name of client machine where TCs are running
+# {@product} name of the product, i.e. ess, eav, ...
+#
+# ---- Example
+#
+# python -c .\config.conf -v bit=bit64 -v machine=w7x86_64 -v product=ess -r http://xxx.xxx.xxx.xxx:11000 .\test_suit.tfw
+#
+# ---- Load variables
+# variables related to product, install, uninstall, sysinspector
+{@eset} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/eset.json"
+# paths to firefox, outlook, ... on client machine
+{@host} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/host.json"
+# json with emails for each machine
+{@emails} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/emails.json"
+# paths to utilities like sending mails, downloading eicar, etc.
+{@utils} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/utils.json"
+
+# ---- Prepare global variables
+
+{@app} = {@eset}.{@product}.path
+{@sys_inspector} = {@eset}.{@product}.sys_inspector
+
+{@firefox} = {@host}.{@bit}.firefox
+{@outlook} = {@host}.{@bit}.outlook
+{@wlmail} = {@host}.{@bit}.wlmail
+{@thunderbird} = {@host}.{@bit}.thunderbird
+
+{@install} = {@eset}.{@product}.{@bit}.install
+{@uninstall} = {@eset}.{@product}.{@bit}.install
+{@mail_imap} = {@emails}.{@machine}.send_mail_imap
+{@mail_pop} = {@emails}.{@machine}.send_mail_pop
+
+{@import_path} = {@utils}.import
+{@eicar_download} = {@utils}.eicar
+{@send_mail} = {@utils}.send_mail
+{@proxy_server} = {@utils}.proxy_server
+{@proxy_port} = {@utils}.proxy_port
+{@reboot} = {@utils}.reboot  # this is no longer needed, use ExitConnectorReboot instead
+
+
+# ---- Run basic functionality regression set
+
+LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/install7.rxrep"
+Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/01_Install.txt"
+  LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/eav7.rxrep"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/20_ImportSettings.txt"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/19_UpdateUnsuccess.txt"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/06_ActivateSuccess.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/09_UpdateSuccess.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/12_ProxyUpdate.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/03_DownloadEicar.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/02_OnDemandScanner.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/15_WebAccessProtection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/11_EmailProtection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/13_RealtimeProtection.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/07_SysInspector.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/14_EnableProtocolFiltering.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/05_POP3Protection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/18_IMAPProtection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/16_EnableSSL.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/08_SSLBasic.txt"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/10_GamerMode.txt"
+  LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/uninstall7.rxrep"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/17_Uninstall.txt"
+  LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/eav7.rxrep"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/04_Reboot.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/20_ImportSettings.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/19_UpdateUnsuccess.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/06_ActivateSuccess.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/09_UpdateSuccess.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/12_ProxyUpdate.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/03_DownloadEicar.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/02_OnDemandScanner.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/15_WebAccessProtection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/11_EmailProtection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/13_RealtimeProtection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/07_SysInspector.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/14_EnableProtocolFiltering.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/05_POP3Protection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/18_IMAPProtection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/16_EnableSSL.txt"
+          Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/08_SSLBasic.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/10_GamerMode.txt"
+    LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/uninstall7.rxrep"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/eav7/17_Uninstall.txt"
+

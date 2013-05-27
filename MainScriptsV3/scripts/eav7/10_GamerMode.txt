@@ -1,0 +1,85 @@
+# clear logs if any
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+# tools use to load much more slowly => wait more time
+WaitForObject EAV/eleTools/lnkLogFiles 60000
+ClickElement EAV/eleTools/lnkLogFiles
+
+# remove previous logs
+Case
+  When WaitForObject EAV/eleLog/celScanner 10000 is True
+    Delay 2000
+    ClickElement EAV/eleLog/celScanner
+    SendKey EAV/eleLog/celScanner <Control+A>
+    SendKey EAV/eleLog/celScanner <Delete>
+    WaitForObject EAV/btnYes 10000
+    Delay 2000
+    ClickElement EAV/btnYes
+
+WaitForObject EAV/mnuMenuBar/mnuHome 30000
+ClickElement EAV/mnuMenuBar/mnuHome
+
+WaitForObject EAV/btnCloseX 20000
+ClickElement EAV/btnCloseX
+
+# fire up firefox and try to download stuff
+RunParam {@firefox} "http://eicar.org/download/eicar.com"
+
+# check notification pop-up
+Assert WaitForObject EAV/txtPopup 10000 is True
+ClickElement frmFirefox/btnCloseX
+
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+WaitForObject EAV/eleTools/lnkLogFiles 30000
+ClickElement EAV/eleTools/lnkLogFiles
+
+WaitForObject EAV/eleLog/celScanner 30000
+Assert GetElementAttribute EAV/eleLog/celScanner Text is "HTTP filter"
+
+# clear log
+ClickElement EAV/eleLog/celScanner
+SendKey EAV/eleLog/celScanner <Control+A>
+SendKey EAV/eleLog/celScanner <Delete>
+WaitForObject EAV/btnYes 20000
+ClickElement EAV/btnYes
+
+WaitForObject EAV/mnuMenuBar/mnuSetup 30000
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+# enable gamer mode
+WaitForObject EAV/eleSetup/btnGamerMode 20000
+ClickElement EAV/eleSetup/btnGamerMode
+WaitForObject cmuMenu/mnuEnable 30000
+ClickElement cmuMenu/mnuEnable
+
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX
+
+# try to donwload eicar.com with firefox
+RunParam {@firefox} "http://eicar.org/download/eicar.com"
+
+# wait for popup. Should not show up
+Assert WaitForObject EAV/txtPopup 20000 is NIL
+WaitForObject frmFirefox/btnCloseX 60000
+ClickElement frmFirefox/btnCloseX
+
+# Check logs
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+WaitForObject EAV/eleTools/lnkLogFiles 30000
+ClickElement EAV/eleTools/lnkLogFiles
+
+WaitForObject EAV/eleLog/celScanner 30000
+Assert GetElementAttribute EAV/eleLog/celScanner Text is "HTTP filter"
+
+ClickElement EAV/mnuMenuBar/mnuHome
+WaitForObject EAV/mnuMenuBar/mnuHome 30000
+ClickElement EAV/btnCloseX
+

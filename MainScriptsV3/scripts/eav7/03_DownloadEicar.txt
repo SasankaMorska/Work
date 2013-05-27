@@ -1,0 +1,35 @@
+## download eicar
+
+# turn of real time protection and also web protection
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuSetup 60000
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+WaitForObject EAV/eleSetup/btnRealTimeProtect 40000
+ClickElement EAV/eleSetup/btnRealTimeProtect
+
+WaitForObject cmuMenu/mnuDisable10 10000
+ClickElement cmuMenu/mnuDisable10
+
+ClickElement EAV/eleSetup/btnWebAccessProtection
+WaitForObject cmuMenu/mnuDisable10 10000
+ClickElement cmuMenu/mnuDisable10
+
+# download eicar
+Run {@eicar_download}
+Delay 10000
+
+# enable real time protection and web protection
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+WaitForObject EAV/eleSetup/btnRealTimeProtect 20000
+ClickElement EAV/eleSetup/btnRealTimeProtect
+ClickElement cmuMenu/mnuEnable
+
+WaitForObject EAV/eleSetup/btnWebAccessProtection 10000
+ClickElement EAV/eleSetup/btnWebAccessProtection
+ClickElement cmuMenu/mnuEnable
+
+# return app to base state
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

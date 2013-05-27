@@ -1,0 +1,29 @@
+
+# ------- Set logging for new firewall rule
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+
+WaitForObject frmAdvancedSetup/treAdvancedSetup 30000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->0->0
+
+WaitForObject frmAdvancedSetup/RulesAndZones/cmbRulesToDisplay 20000
+SelectByIndex frmAdvancedSetup/RulesAndZones/cmbRulesToDisplay 0
+
+ClickElement frmAdvancedSetup/RulesAndZones/btnRulesEditor
+
+# enable logging of this firewall rule
+SelectTree frmAdvancedSetup/RulesAndZones/treRules "Firefox"
+# 2 times keystroke "right", just to be sure
+SendKey frmAdvancedSetup/RulesAndZones/treRules <Right>
+SendKey frmAdvancedSetup/RulesAndZones/treRules <Right>
+
+WaitForObject frmAdvancedSetup/RulesAndZones/btnEditRule 30000
+ClickElement frmAdvancedSetup/RulesAndZones/btnEditRule
+
+WaitForObject frmAdvancedSetup/RulesAndZones/ckbEnableLog 20000
+Check frmAdvancedSetup/RulesAndZones/ckbEnableLog
+
+ClickElement frmAdvancedSetup/RulesAndZones/btnRuleEditOK
+
+WaitForObject frmAdvancedSetup/RulesAndZones/btnRulesOK 20000
+ClickElement frmAdvancedSetup/RulesAndZones/btnRulesOK
+# ------------------------------------------------------------------------------ 

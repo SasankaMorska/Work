@@ -1,0 +1,60 @@
+# local delay because of failing tests
+SetLocalDelay 1500
+
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuSetup 30000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+Case
+  When WaitForObject ESS/btnMaximize 10000 is True
+    ClickElement ESS/btnMaximize
+
+WaitForObject ESS/eleSetup/lnkProductActivation 40000
+ClickElement ESS/eleSetup/lnkProductActivation
+
+WaitForObject frmActivation/btnUsername 40000
+ClickElement frmActivation/btnUsername
+ClickElement frmActivation/btnNext
+
+# insert user name
+WaitForObject frmActivation/txtUser 40000
+InputText frmActivation/txtUser "kajci"
+ClickElement frmActivation/txtPassword
+
+# send keystrokes
+SendKey frmActivation/txtPassword <l>
+SendKey frmActivation/txtPassword <o>
+SendKey frmActivation/txtPassword <l>
+SendKey frmActivation/txtPassword <o>
+SendKey frmActivation/txtPassword <f>
+SendKey frmActivation/txtPassword <o>
+SendKey frmActivation/txtPassword <n>
+
+# activate
+ClickElement frmActivation/btnActivate
+WaitForObject frmActivation/btnFinish 30000
+ClickElement frmActivation/btnFinish
+
+# skip last form
+WaitForObject frmActivation/btnSkip 30000
+ClickElement frmActivation/btnSkip
+
+# if update is running, stop updating
+WaitForObject ESS/mnuMenuBar/mnuUpdate 30000
+ClickElement ESS/mnuMenuBar/mnuUpdate
+
+# if update is running, stop it
+Case
+  When WaitForObject ESS/eleUpdate/btnCancelUpdate 10000 is True
+    # don't fail test, because cancel button could be already gone
+    OnErrorContinue
+    ClickElement ESS/eleUpdate/btnCancelUpdate
+    WaitForObject ESS/eleUpdate/btnOK 20000
+    ClickElement ESS/eleUpdate/btnOK
+    OnErrorStop
+
+# close application window
+WaitForObject ESS/mnuMenuBar/mnuHome 30000
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+

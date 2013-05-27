@@ -1,0 +1,7 @@
+# open Sys Inspector
+Run {@sys_inspector}
+
+# wait for a long time to load sys inspector
+WaitForObject frmSysInspector/cmbDetail 600000
+ClickElement frmSysInspector/btnCloseX
+ClickElement frmSysInspector/btnNo

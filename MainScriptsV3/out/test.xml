@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestReport file="foo">
+<Steps>
+  <Steps>
+    <Step>
+      <Expression>{@eset} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/eset.json"</Expression>
+      <Raw_data></Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@host} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/host.json"</Expression>
+      <Raw_data></Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@emails} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/emails.json"</Expression>
+      <Raw_data></Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@utils} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/utils.json"</Expression>
+      <Raw_data></Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@app} = {@eset} . {@product} . "path"</Expression>
+      <Raw_data>C:\Program Files\ESET\ESET Smart Security\egui.exe</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@sys_inspector} = {@eset} . {@product} . "sys_inspector"</Expression>
+      <Raw_data>C:\Program Files\ESET\ESET Smart Security\SysInspector.exe</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@firefox} = {@host} . {@bit} . "firefox"</Expression>
+      <Raw_data>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@outlook} = {@host} . {@bit} . "outlook"</Expression>
+      <Raw_data>C:\Program Files (x86)\Microsoft Office\Office14\outlook.exe</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@wlmail} = {@host} . {@bit} . "wlmail"</Expression>
+      <Raw_data>C:\Program Files (x86)\Windows Live\Mail\wlmail.exe</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@thunderbird} = {@host} . {@bit} . "thunderbird"</Expression>
+      <Raw_data>C:\Program Files (x86)\Mozilla Thunderbird\thunderbird.exe</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@install} = {@eset} . {@product} . {@bit} . "install"</Expression>
+      <Raw_data>C:\install\ess_nt64_ENU.msi</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@uninstall} = {@eset} . {@product} . {@bit} . "install"</Expression>
+      <Raw_data>C:\install\ess_nt64_ENU.msi</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@mail_imap} = {@emails} . {@machine} . "send_mail_imap"</Expression>
+      <Raw_data>xp64_imap@automation.local xp64_imap@automation.local</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@mail_pop} = {@emails} . {@machine} . "send_mail_pop"</Expression>
+      <Raw_data>xp64_pop@automation.local xp64_pop@automation.local</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@import_path} = {@utils} . "import"</Expression>
+      <Raw_data>C:\install\import.xml</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@eicar_download} = {@utils} . "eicar"</Expression>
+      <Raw_data>C:\utils\wget.bat</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@send_mail} = {@utils} . "send_mail"</Expression>
+      <Raw_data>C:\utils\sendImap.bat</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@send_viagra} = {@utils} . "send_viagra"</Expression>
+      <Raw_data>C:\utils\sendViagra.bat</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@proxy_server} = {@utils} . "proxy_server"</Expression>
+      <Raw_data>10.1.190.10</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{@proxy_port} = {@utils} . "proxy_port"</Expression>
+      <Raw_data>2347</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/ess7.rxrep"</Expression>
+      <Raw_data></Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>{arg} = Concat "C:\remove.ps1 " {@machine}</Expression>
+      <Raw_data>C:\remove.ps1 xp64</Raw_data>
+      <Res>Pass</Res>
+    </Step>
+    <Step>
+      <Expression>RemoteRunParam 'http://10.1.190.11:11000' "powershell" {arg}</Expression>
+      <Raw_data></Raw_data>
+      <Res>Pass</Res>
+    </Step>
+  </Steps>
+</Steps>
+<Time>
+  <From>2013-05-13 11:39:59.727000</From>
+  <Till>2013-05-13 11:40:21.804000</Till>
+  <Duration>0:00:22.077000</Duration>
+</Time>
+</TestReport>

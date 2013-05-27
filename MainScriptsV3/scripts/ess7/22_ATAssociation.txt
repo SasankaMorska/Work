@@ -1,0 +1,46 @@
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuSetup 30000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+# open up AT form
+WaitForObject ESS/eleSetup/btnAntiTheft 30000
+ClickElement ESS/eleSetup/btnAntiTheft
+Delay 1000
+ClickElement cmuMenu/mnuSetup
+
+# enter email address eset.testinglab12@gmail.com
+WaitForObject ESS/AntiTheftMain/txtEmail 20000
+InputText ESS/AntiTheftMain/txtEmail "eset.testinglab12@gmail.com"
+
+# enter password "testlab123"
+ClickElement ESS/AntiTheftMain/txtPassword
+SendKey ESS/AntiTheftMain/txtPassword <t>
+SendKey ESS/AntiTheftMain/txtPassword <e>
+SendKey ESS/AntiTheftMain/txtPassword <s>
+SendKey ESS/AntiTheftMain/txtPassword <t>
+SendKey ESS/AntiTheftMain/txtPassword <l>
+SendKey ESS/AntiTheftMain/txtPassword <a>
+SendKey ESS/AntiTheftMain/txtPassword <b>
+SendKey ESS/AntiTheftMain/txtPassword <D1>
+SendKey ESS/AntiTheftMain/txtPassword <D2>
+SendKey ESS/AntiTheftMain/txtPassword <D3>
+
+# sign in
+ClickElement ESS/AntiTheftMain/btnSignIn
+
+# default device name association
+WaitForObject ESS/AntiTheftMain/btnNext 10000
+ClickElement ESS/AntiTheftMain/btnNext
+
+WaitForObject ESS/AntiTheftMain/txtDevice 60000
+Assert Trim GetElementAttribute ESS/AntiTheftMain/txtDevice TextValue is "Device association completed"
+
+WaitForObject ESS/AntiTheftMain/btnFinish 30000
+ClickElement ESS/AntiTheftMain/btnFinish
+
+# firefox is started up -> CloseX
+WaitForObject frmFirefox/btnCloseX 20000
+ClickElement frmFirefox/btnCloseX
+
+# close app
+ClickElement ESS/btnCloseX

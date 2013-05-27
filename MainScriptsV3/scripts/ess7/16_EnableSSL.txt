@@ -1,0 +1,32 @@
+# set local delay
+SetLocalDelay 1500
+
+# enable ssl checking
+Run {@app}
+
+WaitForObject ESS/mnuMenuBar/mnuSetup 30000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+# enter advanced setup
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+
+# enable checking of ssl connections
+WaitForObject frmAdvancedSetup/treAdvancedSetup 30000
+
+# some versions have one tree option more... like XP
+Case
+  When SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 2->2->3 is True
+    Delay 100
+  When SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 2->2->2 is True
+    Delay 100
+
+ClickElement frmAdvancedSetup/ProtocolFiltering/rbtAlwaysScan
+ClickElement frmAdvancedSetup/btnOK
+
+# here is some problem with adding eset root certificate to all known web
+# browsers
+
+WaitForObject ESS/mnuMenuBar/mnuHome 30000
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+

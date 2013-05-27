@@ -1,0 +1,50 @@
+# turn of real time protection before it gets downloaded eicar
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuSetup 30000
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+WaitForElement EAV/eleSetup/btnRealTimeProtect 30000
+ClickElement EAV/eleSetup/btnRealTimeProtect
+ClickElement cmuMenu/mnuDisable10
+
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX
+
+# open email client, in this case outlook
+Run {@outlook}
+
+# in case of unregistered version, close registration prompt
+Case
+  When WaitForObject frmOutlook2010/btnCancel 50000 is True
+    ClickElement frmOutlook2010/btnCancel
+
+# create new email, attach eicar
+WaitForObject frmOutlook2010/btnNewEMail 50000
+ClickElement frmOutlook2010/btnNewEMail
+
+WaitForObject frmOutlook2010/txtTo 50000
+InputText frmOutlook2010/txtTo "fake@email.address"
+InputText frmOutlook2010/txtSubjectTo "whatever"
+
+# attach a candy
+ClickElement frmOutlook2010/btnAttach
+WaitForObject frmOutlook2010/btnInsert 30000
+InputText frmOutlook2010/txtPath "C:\eicar\eicar.com"
+ClickElement frmOutlook2010/btnInsert
+ClickElement frmOutlook2010/btnSend
+ClickElement frmOutlook2010/btnYes
+ClickElement frmOutlook2010/btnCloseX
+
+
+# Check logs
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+WaitForObject EAV/eleTools/lnkLogFiles 30000
+ClickElement EAV/eleTools/lnkLogFiles
+
+WaitForObject EAV/eleLog/celScanner 30000
+Assert GetElementAttribute EAV/eleLog/celScanner Text is "Email filter - Outlook"
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

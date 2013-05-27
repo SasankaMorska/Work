@@ -1,0 +1,44 @@
+# set local delay because click after wait fails from time to time
+SetLocalDelay 1500
+
+# go to computer scan and select custom scan
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuComputerScan 120000
+ClickElement EAV/mnuMenuBar/mnuComputerScan
+
+WaitForObject EAV/eleComputerScan/lnkCustomScan 30000
+ClickElement EAV/eleComputerScan/lnkCustomScan
+
+WaitForObject EAV/ComputerScan/cmbScanTargets 20000
+SendKey EAV/ComputerScan/cmbScanTargets <Up>
+SendKey EAV/ComputerScan/cmbScanTargets <Up>
+SendKey EAV/ComputerScan/cmbScanTargets <Up>
+SendKey EAV/ComputerScan/cmbScanTargets <Up>
+SendKey EAV/ComputerScan/cmbScanTargets <Up>
+# better would be:
+# While GetAttibute EAV/ComputerScan/cmbScanTargets Text is "By profile bla bla"
+#   SendKey EAV/ComputerScan/cmbScanTargets <Up>
+
+# input path to eicar folder
+InputText EAV/ComputerScan/txtPath "C:\eicar\"
+ClickElement EAV/ComputerScan/btnScan
+
+WaitForObject EAV/btnClose 20000
+ClickElement EAV/lnkShowLog
+
+# extract piece of text from log
+{trim} = Trim GetElementAttribute EAV/celNrOfCleaned Text
+
+# check whether number of found infiltration is correct
+Assert {trim} is "Number of threads objects: 4"
+# In this case, we get different cell, with different string, but it should be
+# "Number of cleaned objects: 4"
+# Assert {trim} is "Number of cleaned objects: 4"
+
+# close results window
+ClickElement EAV/btnCloseX
+ClickElement EAV/btnClose
+
+# return app to basic state
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

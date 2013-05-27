@@ -1,0 +1,99 @@
+# local delay
+SetLocalDelay 1500
+
+## 2min Gamer Mode TestCase
+
+# clear logs if any
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+# tools use to load much more slowly => wait more time
+WaitForObject EAV/eleTools/lnkLogFiles 60000
+ClickElement EAV/eleTools/lnkLogFiles
+
+# remove previous logs
+Case
+  When WaitForObject EAV/eleLog/celScanner 10000 is True
+    Delay 2000
+    ClickElement EAV/eleLog/celScanner
+    SendKey EAV/eleLog/celScanner <Control+A>
+    SendKey EAV/eleLog/celScanner <Delete>
+    WaitForObject EAV/btnYes 10000
+    Delay 2000
+    ClickElement EAV/btnYes
+
+# enable gamer mode for 2 minutes
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+Case
+  When WaitForObject EAV/btnMaximize 20000 is True
+    ClickElement EAV/btnMaximize
+
+# enter advanced setup
+WaitForObject EAV/eleSetup/lnkEnterAdvancedSetup 30000
+ClickElement EAV/eleSetup/lnkEnterAdvancedSetup
+
+WaitForObject frmAdvancedSetup/treAdvancedSetup 30000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 4->5
+Check frmAdvancedSetup/GamerMode/ckbEnable
+
+# we need additional click to enable text field
+ClickElement frmAdvancedSetup/GamerMode/ckbEnableTime
+Check frmAdvancedSetup/GamerMode/ckbEnableTime
+
+InputText frmAdvancedSetup/GamerMode/txtTime "2"
+ClickElement frmAdvancedSetup/btnOK
+
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX
+
+# try to donwload eicar.com with firefo
+RunParam {@firefox} "http://eicar.org/download/eicar.com"
+Assert WaitForObject EAV/txtPopup 20000 is NIL
+WaitForObject frmFirefox/btnCloseX 60000
+ClickElement frmFirefox/btnCloseX
+
+# Check logs
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+WaitForObject EAV/eleTools/lnkLogFiles 30000
+ClickElement EAV/eleTools/lnkLogFiles
+
+WaitForObject EAV/eleLog/celScanner 30000
+Assert GetElementAttribute EAV/eleLog/celScanner Text is "HTTP filter"
+
+# clear log
+ClickElement EAV/eleLog/celScanner
+SendKey EAV/eleLog/celScanner <Control+A>
+SendKey EAV/eleLog/celScanner <Delete>
+WaitForObject EAV/btnYes 20000
+ClickElement EAV/btnYes
+
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX
+
+# now wait for 2 minutes
+Delay 120000
+
+# fire up firefox and try to download stuff
+RunParam {@firefox} "http://eicar.org/download/eicar.com"
+# check if notification pop-up
+Assert WaitForObject EAV/txtPopup 10000 is True
+ClickElement frmFirefox/btnCloseX
+
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+WaitForObject EAV/eleTools/lnkLogFiles 30000
+ClickElement EAV/eleTools/lnkLogFiles
+
+WaitForObject EAV/eleLog/celScanner 30000
+Assert GetElementAttribute EAV/eleLog/celScanner Text is "HTTP filter"
+
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX
+

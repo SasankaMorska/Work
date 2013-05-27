@@ -1,0 +1,22 @@
+# enable hips and self defense
+Run {@app}
+
+WaitForObject ESS/mnuMenuBar/mnuSetup 40000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+WaitForObject ESS/eleSetup/btnHips 30000
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+
+WaitForObject frmAdvancedSetup/treAdvancedSetup 40000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 0->2
+
+WaitForObject frmAdvancedSetup/ckbEnableHIPS 30000
+Check frmAdvancedSetup/ckbEnableHIPS
+Check frmAdvancedSetup/ckbEnableSelfDefense
+
+ClickElement frmAdvancedSetup/btnOK
+
+WaitForObject ESS/mnuMenuBar/mnuHome 30000
+ClickElement ESS/mnuMenuBar/mnuHome
+
+ClickElement ESS/btnCloseX

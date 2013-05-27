@@ -1,0 +1,52 @@
+{
+	"cxp86":
+	{
+		"SendMailImap":"cxp86_imap@automation.local cxp86_imap@automation.local",
+		"SendMailPop":"cxp86_pop@automation.local cxp86_pop@automation.local"
+	},
+	"cxp64":
+	{
+		"SendMailImap":"cxp64_imap@automation.local cxp64_imap@automation.local",
+		"SendMailPop":"cxp64_pop@automation.local cxp64_pop@automation.local"
+	},
+	"cvistax64":
+	{
+		"SendMailImap":"cvistax64_imap@automation.local cvistax64_imap@automation.local",
+		"SendMailPop":"cvistax64_pop@automation.local cvistax64_pop@automation.local"
+	},
+	"cvistax86":
+	{
+		"SendMailImap":"cvistax86_imap@automation.local cvistax86_imap@automation.local",
+		"SendMailPop":"cvistax86_pop@automation.local cvistax86_pop@automation.local"
+	},
+	"cwhs2003x86":
+	{
+		"SendMailImap":"cwhs2003x86_imap@automation.local cwhs2003x86_imap@automation.local",
+		"SendMailPop":"cwhs2003x86_pop@automation.local cwhs2003x86_pop@automation.local"
+	},
+	"cwhs2011x64":
+	{
+		"SendMailImap":"cwhs2011x64_imap@automation.local cwhs2011x64_imap@automation.local",
+		"SendMailPop":"cwhs2011x64_pop@automation.local cwhs2011x64_pop@automation.local"
+	},
+	"cwin7x86":
+	{
+		"SendMailImap":"cwin7x86_imap@automation.local cwin7x86_imap@automation.local",
+		"SendMailPop":"cwin7x86_pop@automation.local cwin7x86_pop@automation.local"
+	},
+	"cwin7x64":
+	{
+		"SendMailImap":"cwin7x64_imap@automation.local cwin7x64_imap@automation.local",
+		"SendMailPop":"cwin7x64_pop@automation.local cwin7x64_pop@automation.local"
+	},
+	"cwin8x64":
+	{
+		"SendMailImap":"cwin8x64_imap@automation.local cwin8x64_imap@automation.local",
+		"SendMailPop":"cwin8x64_pop@automation.local cwin8x64_pop@automation.local"
+	},
+	"cwin8x86":
+	{
+		"SendMailImap":"cwin8x86_imap@automation.local cwin8x86_imap@automation.local",
+		"SendMailPop":"cwin8x86_pop@automation.local cwin8x86_pop@automation.local"
+	}
+}

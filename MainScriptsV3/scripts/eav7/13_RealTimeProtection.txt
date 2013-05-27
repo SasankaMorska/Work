@@ -1,0 +1,22 @@
+# open up application
+Run {@app}
+
+# wait for it...
+WaitForObject EAV/mnuMenuBar/mnuTools 25000
+
+# Try to run eicar.com file, this should fail
+Assert Run "C:\eicar\eicar.com" is NIL
+
+ClickElement EAV/mnuMenuBar/mnuTools
+
+# wait for link for a while. Tools takes quite long to load
+WaitForObject EAV/eleTools/lnkLogFiles 50000
+ClickElement EAV/eleTools/lnkLogFiles
+
+WaitForObject EAV/eleLog/celScanner 25000
+Delay 5000
+Assert GetElementAttribute EAV/eleLog/celScanner Text is "Real-time file system protection"
+Assert GetElementAttribute EAV/eleLog/celThreat Text is "Eicar test file"
+
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

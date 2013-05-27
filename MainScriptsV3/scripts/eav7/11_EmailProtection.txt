@@ -1,0 +1,67 @@
+# turn of real time protection before it gets downloaded eicar
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuSetup 30000
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+WaitForObject EAV/eleSetup/btnRealTimeProtect 30000
+ClickElement EAV/eleSetup/btnRealTimeProtect
+ClickElement cmuMenu/mnuDisable10
+
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX
+
+# Rather send email from wl mail. Outlook can be unregistered on XP
+# open email client, in this case live mail
+Run {@wlmail}
+
+Case
+  When WaitForObject frmWlmail/Certificate/btnYes 50000 is True
+    ClickElement frmWlmail/Certificate/btnYes
+
+# create new email
+WaitForObject frmWlmail/btnNew 50000
+ClickElement frmWlmail/btnNew
+
+# sent to ?
+WaitForObject frmWlmail/txtTo 30000
+InputText frmWlmail/txtTo "fake@email.address"
+
+# get focus on the form subject input field
+ClickElement frmWlmail/txtSubject
+InputText frmWlmail/txtSubject "Whatever you want"
+
+# attachment ?
+ClickElement frmWlmail/btnAttach
+WaitForObject frmWlmail/txtPath 30000
+InputText frmWlmail/txtPath "C:\eicar\eicar.com"
+ClickElement frmWlmail/btnOpen
+
+# Send email without text in body.
+ClickElement frmWlmail/btnSend
+
+# Close email client and check logs
+Case
+  When WaitForObject frmWlmail/btnCloseX 20000 is True
+    ClickElement frmWlmail/btnCloseX
+  When WaitForObject frmWlmail/btnCloseTX 20000 is True
+    ClickElement frmWlmail/btnCloseX
+  When WaitForObject frmWlmail/btnClose 20000 is True
+    ClickElement frmWlmail/btnClose
+
+# here wlmail tells us stuff again -> Click "no we don't"
+Case 
+  When WaitForObject frmWlmail/UnsentMessages/btnDontSend 30000 is True
+    ClickElement frmWlmail/UnsentMessages/btnDontSend
+
+# Check logs
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+WaitForObject EAV/eleTools/lnkLogFiles 30000
+ClickElement EAV/eleTools/lnkLogFiles
+
+WaitForObject EAV/eleLog/celScanner 30000
+Assert GetElementAttribute EAV/eleLog/celScanner Text is "Email filter - Windows Live Mail"
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

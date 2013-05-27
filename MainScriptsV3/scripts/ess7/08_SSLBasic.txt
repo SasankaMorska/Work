@@ -1,0 +1,109 @@
+# set local delay because clicks after wait can fail from time to time
+SetLocalDelay 1500
+
+## HTTPS test
+RunParam {@firefox} "https://secure.eicar.org/eicar.com"
+WaitForObject frmFirefox/btnCloseX 30000
+ClickElement frmFirefox/btnCloseX
+
+Run{@app}
+
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+
+# navigate to Log Files
+WaitForObject ESS/eleTools/lnkLogFiles 30000
+ClickElement ESS/eleTools/lnkLogFiles
+
+# check if there is http filter
+WaitForObject ESS/eleLog/celScanner 60000
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "HTTP filter"
+Assert GetElementAttribute ESS/eleLog/celThreat Text is "Eicar test file"
+
+# return application to base state
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+
+## POP3S test
+# first send infected emails
+RunParam {@send_mail} {@mail_pop}
+Delay 5000
+
+# Open Windows Live Mail. This one is configured for SSL connection
+Run {@wlmail}
+
+Case
+  When WaitForObject frmSSLEncrypted/btnAlways 30000 is True
+    ClickElement frmSSLEncrypted/btnAlways
+
+Case
+  When WaitForObject frmWlmail/Certificate/btnYes 30000 is True
+    ClickElement frmWlmail/Certificate/btnYes
+
+
+# sometimes live mail loads too long, wait for more seconds
+WaitForObject frmWlmail/btnCloseX 90000
+# wait for a sec or two
+Delay 5000
+
+ClickElement frmWlmail/btnCloseX
+
+# chcek logs in ESS / ESS
+Run{@app}
+
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+
+# navigate to Log Files
+WaitForObject ESS/eleTools/lnkLogFiles 30000
+ClickElement ESS/eleTools/lnkLogFiles
+
+# check if there is http filter
+WaitForObject ESS/eleLog/celScanner 30000
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "POP3 filter"
+Assert GetElementAttribute ESS/eleLog/celThreat Text is "Eicar test file"
+
+# return application to base state
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+
+
+## IMAPS test
+# send infected email to IMAP account
+RunParam {@send_mail} {@mail_imap}
+Delay 5000
+
+# Open Windows Live Mail. This one is configured for SSL connection
+Run {@wlmail}
+
+Case
+  When WaitForObject frmSSLEncrypted/btnAlways 20000 is True
+    ClickElement frmSSLEncrypted/btnAlways
+
+When WaitForObject frmWlmail/Certificate/btnYes 30000 is True
+  ClickElement frmWlmail/Certificate/btnYes
+
+WaitForObject frmWlmail/btnCloseX 90000
+# wait for a sec or two
+Delay 5000
+
+ClickElement frmWlmail/btnCloseX
+
+# chcek logs in ESS / ESS
+Run{@app}
+
+WaitForObject ESS/mnuMenuBar/mnuTools 30000
+ClickElement ESS/mnuMenuBar/mnuTools
+
+# navigate to Log Files
+WaitForObject ESS/eleTools/lnkLogFiles 30000
+ClickElement ESS/eleTools/lnkLogFiles
+
+# check if there is http filter
+WaitForObject ESS/eleLog/celScanner 30000
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "IMAP filter"
+Assert GetElementAttribute ESS/eleLog/celThreat Text is "Eicar test file"
+
+# return application to base state
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX

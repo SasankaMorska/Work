@@ -1,0 +1,127 @@
+# REGRESSION SUIT ESS
+#
+# ---- Commandline arguments
+#
+# {@bit} defines architecture of OS
+# {@machine} is name of client machine where TCs are running
+# {@product} name of the product, i.e. ess
+#
+# ---- Example
+#
+# python -c .\config.conf -v bit=bit64 -v machine=w7x86_64 -v product=ess -r http://xxx.xxx.xxx.xxx:11000 .\test_suit.tfw
+#
+# ---- Load variables
+
+{@eset} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/eset.json"  # variables related to product, install, uninstall, sysinspector
+{@host} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/host.json"  # paths to firefox, outlook, ... on client machine
+{@emails} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/emails.json"  # json with emails for each machine
+{@utils} = LoadJson "C:/Users/miroslav.beka.HQ/MainScriptsV3/variables/utils.json"  # paths to utilities like sending mails, downloading eicar, etc.
+
+# ---- Prepare global variables
+
+{@app} = {@eset}.{@product}.path
+{@sys_inspector} = {@eset}.{@product}.sys_inspector
+
+{@firefox} = {@host}.{@bit}.firefox
+{@outlook} = {@host}.{@bit}.outlook
+{@wlmail} = {@host}.{@bit}.wlmail
+{@thunderbird} = {@host}.{@bit}.thunderbird
+
+{@install} = {@eset}.{@product}.{@bit}.install
+{@uninstall} = {@eset}.{@product}.{@bit}.install
+{@mail_imap} = {@emails}.{@machine}.send_mail_imap
+{@mail_pop} = {@emails}.{@machine}.send_mail_pop
+
+{@import_path} = {@utils}.import
+{@eicar_download} = {@utils}.eicar
+{@send_mail} = {@utils}.send_mail
+{@send_viagra} = {@utils}.send_viagra
+{@proxy_server} = {@utils}.proxy_server
+{@proxy_port} = {@utils}.proxy_port
+
+{@extract_docs} = {@utils}.extract_docs
+{@prepare_parental_import} = {@utils}.prepare_parental_import
+{@test_eset} = {@utils}.test_eset
+{@test_registry} = {@utils}.test_registry
+{@test_driver} = {@utils}.test_driver
+
+{@fail_file} = {@utils}.fail_file
+{@clean_test_files} = {@utils}.clean_test_files
+{@autologin_registry} = {@utils}.autologin_registry
+{@checkuser} = {@utils}.checkuser
+
+
+# ---- Run basic functionality regression set
+
+LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/install7.rxrep"
+Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/01_Install.txt"
+  LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/ess7.rxrep"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/20_ImportSettings.txt"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/19_UpdateUnsuccess.txt"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/06_ActivateSuccess.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/09_UpdateSuccess.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/27_ParentalControl.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/12_ProxyUpdate.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/25_DocumentScanner.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/03_DownloadEicar.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/02_OnDemandScanner.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/13_RealTimeProtection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/15_WebAccessProtection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/11_EmailProtection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/26_AntispamProtection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/30_DeviceControl.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/07_SysInspector.txt" 
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/14_EnableProtocolFiltering.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/05_POP3Protection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/18_IMAPProtection.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/16_EnableSSL.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/08_SSLBasic.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/22_ATAssociation.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/34_TestAT.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/23_ATDisAssociation.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/22_ATAssociation.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/33_RemoveDeviceFromAT.txt"
+    # missing device test case contains association with AT portal
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/31_MissingDevice.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/32_NormalStateOfDevice.txt"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/10_GamerMode.txt"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/28_EnableHIPS.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScrpitsV3/scripts/ess7/29_HIPSAndSelfDefense.txt"
+  LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/uninstall7.rxrep"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/17_Uninstall.txt"
+  LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/ess7.rxrep"
+  Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/04_Reboot.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/20_ImportSettings.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/19_UpdateUnsuccess.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/06_ActivateSuccess.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/09_UpdateSuccess.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/27_ParentalControl.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/12_ProxyUpdate.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/25_DocumentScanner.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/03_DownloadEicar.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/13_RealTimeProtection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/02_OnDemandScanner.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/15_WebAccessProtection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/11_EmailProtection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/13_AntispamProtection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/30_DeviceControl.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/07_SysInspector.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/14_EnableProtocolFiltering.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/05_POP3Protection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/18_IMAPProtection.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/16_EnableSSL.txt"
+          Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/08_SSLBasic.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/22_ATAssociation.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/34_TestAT.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/23_ATDisAssociation.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/22_ATAssociation.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/33_RemoveDeviceFromAT.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/31_MissingDevice.txt"
+        Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/32_NormalStateOfDevice.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/10_GamerMode.txt"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/28_EnableHIPS.txt"
+      Execute "C:/Users/miroslav.beka.HQ/MainScrpitsV3/scripts/ess7/29_HIPSAndSelfDefense.txt"
+    LoadRepository "C:/Users/miroslav.beka.HQ/MainScriptsV3/repositories/uninstall7.rxrep"
+    Execute "C:/Users/miroslav.beka.HQ/MainScriptsV3/scripts/ess7/17_Uninstall.txt"
+
+

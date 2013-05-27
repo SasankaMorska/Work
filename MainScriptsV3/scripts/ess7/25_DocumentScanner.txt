@@ -1,0 +1,52 @@
+Run {@app}
+
+# turn of real time protection
+WaitForObject ESS/mnuMenuBar/mnuSetup 60000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+WaitForObject ESS/eleSetup/btnRealTimeProtect 40000
+ClickElement ESS/eleSetup/btnRealTimeProtect
+
+WaitForObject cmuMenu/mnuDisable10 10000
+ClickElement cmuMenu/mnuDisable10
+
+
+# Prepare infected documents
+Run {@extract_docs}
+Delay 3000
+
+# turn on document integration
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+
+WaitForObject frmAdvancedSetup/treAdvancedSetup 40000
+
+# this seems to no longer work in win8
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 0->0->2
+
+WaitForObject frmAdvancedSetup/DocumentScanner/ckbIntegrate 30000
+Check frmAdvancedSetup/DocumentScanner/ckbIntegrate
+
+ClickElement frmAdvancedSetup/btnOK
+
+# open infected documents
+{infected_doc} = "C:\doc\koza02.doc"
+#{infected_doc} = "C:\xls\KOZA_02.xls"
+Run {infected_doc}
+
+WaitForObject frmWord/btnCloseX 40000
+ClickElement frmWord/btnCloseX
+
+# check log files for detected stuff
+ClickElement ESS/mnuMenuBar/mnuTools
+
+WaitForObject ESS/eleTools/lnkLogFiles 30000
+ClickElement ESS/eleTools/lnkLogFiles
+
+WaitForObject ESS/eleLog/celScanner 30000
+Assert GetElementAttribute ESS/eleLog/celScanner Text is "Document protection"
+Assert GetElementAttribute ESS/eleLog/celThreat Text is "W97M/Kumar.A virus"
+
+# return application to basic state
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX
+

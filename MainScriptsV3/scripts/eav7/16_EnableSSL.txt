@@ -1,0 +1,29 @@
+# set local delay
+SetLocalDelay 1500
+
+# enable ssl checking
+Run {@app}
+
+WaitForObject EAV/mnuMenuBar/mnuSetup 30000
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+# enter advanced setup
+SendKey EAV/mnuMenuBar/mnuSetup <F5>
+
+# enable checking of ssl connections
+WaitForObject frmAdvancedSetup/treAdvancedSetup 30000
+
+# some versions have one tree option more... like XP
+Case
+  When SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->2->3 is True
+    Delay 100
+  When SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->2->2 is True
+    Delay 100
+
+ClickElement frmAdvancedSetup/ProtocolFiltering/rbtAlwaysScan
+ClickElement frmAdvancedSetup/btnOK
+
+WaitForObject EAV/mnuMenuBar/mnuHome 30000
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX
+

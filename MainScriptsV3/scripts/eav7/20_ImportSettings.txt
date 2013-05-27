@@ -1,0 +1,20 @@
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuSetup 25000
+ClickElement EAV/mnuMenuBar/mnuSetup
+
+Case
+  WaitForObject EAV/btnMaximize 20000 is True
+    ClickElement EAV/btnMaximize
+
+WaitForObject EAV/eleSetup/lnkImportAndExportSettings 30000
+ClickElement EAV/eleSetup/lnkImportAndExportSettings
+
+WaitForObject frmImport/rbtImportSettings 10000
+ClickElement frmImport/rbtImportSettings
+
+WaitForObject frmImport/txtPath 10000
+InputText frmImport/txtPath {@import_path}
+ClickElement frmImport/btnOK
+WaitForObject EAV/mnuMenuBar/mnuHome 10000
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

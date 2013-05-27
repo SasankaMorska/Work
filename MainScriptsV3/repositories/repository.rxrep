@@ -1,0 +1,1120 @@
+﻿<repository name="repository" id="0170cae8-993b-4c3d-beb7-2fc4ecfa6a04" rxversion="3.3.4.20302">
+	<codegen classname="ess" namespace="MyTestProject"/>
+	<rootfolder name="Root" id="29ffa6c4-09d1-421c-9bcb-9c41eb5f769c" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="False">
+		<folder name="cmuMenu" id="7707710b-453b-41f5-a59f-ded31eadfdf9" searchtimeout="30000ms" capname="contextmenu" isrooted="True" usecache="True">
+			<item name="mnuEnable" id="2bc536dd-ba3a-4df8-853f-c4d0ac2b1ad8" searchtimeout="30000ms" capname="menuitem">
+				/contextmenu[@processname='egui']/contextmenu/menuitem[@childindex=0]
+			</item>
+			<item name="mnuDisable10" id="bc8e3a44-39b7-452a-9a29-ca9ce9cbccf1" searchtimeout="30000ms" capname="menuitem">
+				/contextmenu[@processname='egui']/contextmenu/menuitem[@childindex=2]
+			</item>
+			<item name="mnuDisable30" id="f5c42614-34a5-486b-bfdc-e20242564e68" searchtimeout="30000ms" capname="menuitem">
+				/contextmenu[@processname='egui']/contextmenu/menuitem[@childindex=3]
+			</item>
+			<item name="mnuDisable1h" id="cc098f18-0cdc-449b-af8d-e1ef0ffe5958" searchtimeout="30000ms" capname="menuitem">
+				/contextmenu[@processname='egui']/contextmenu/menuitem[@childindex=4]
+			</item>
+			<item name="mnuDisablePerm" id="67df7d0e-dde0-4c10-b22e-914dbd8613fe" searchtimeout="30000ms" capname="menuitem">
+				/contextmenu[@processname='egui']/contextmenu/menuitem[@childindex=8]
+			</item>
+			<item name="mnuDisable4h" id="fcf33e7e-489b-4288-a2df-f32321ab4360" searchtimeout="30000ms" capname="menuitem">
+				/contextmenu[@processname='egui']/contextmenu/menuitem[@childindex=5]
+			</item>
+			<item name="mnuDisableReboot" id="b9a59007-71cb-44c8-9a8e-c4590e266c3e" searchtimeout="30000ms" capname="menuitem">
+				/contextmenu[@processname='egui']/contextmenu/menuitem[@childindex=6]
+			</item>
+			<item name="mnuSetup" id="f560576a-48a8-4efa-9614-dfbb8ccc67b9" searchtimeout="30000ms" capname="menuitem">
+				/contextmenu[@processname='egui']/contextmenu/menuitem[@childindex=0]
+			</item>
+			<basepath>
+				/contextmenu[@processname='egui']
+			</basepath>
+		</folder>
+		<appfolder name="ESS" id="dc500d05-54ba-45b2-9e6c-8bb2c167e2a7" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow" isrooted="True" usecache="True">
+			<item name="txtPopup" id="efdc6fe6-b662-424b-b834-7dd9d0d04e36" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='egui']/element[@controlid='1']/element/text[@childindex=0]
+			</item>
+			<item name="txtHeader" id="6f9b51bc-af31-48e1-ac53-ad9790327015" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='egui']/element/element[@controlid='4']/text/text[@childindex=5]
+			</item>
+			<item name="btnUpgradeYes" id="d03c7b30-6190-41ca-8357-2b8daa332e1f" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@childindex=0]
+			</item>
+			<item name="btnOK" id="e35b05e9-3282-4ebc-8619-b08127d0f8b6" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@childindex=0]
+			</item>
+			<item name="btnClose" id="a72066e0-18df-4bf8-96a0-63b6cb2541d8" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='egui']/element/element[@controlid='5']/element[@class='ESET Panel Standalone Window' and @instance='0']/element/element/text/button[@childindex=14]
+			</item>
+			<item name="btnMaximize" id="f676ee14-6bb8-409d-ad52-958a81f1195a" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='egui']/titlebar/button[@accessiblename='Maximize']
+			</item>
+			<item name="btnCloseX" id="efe24e38-51c5-4532-b743-6d94e600e752" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='egui']/titlebar/button[@accessiblename='Close']
+			</item>
+			<folder name="mnuMenuBar" id="5ace2f6f-8ce6-4a34-8398-04f698829a2b" searchtimeout="30000ms" capname="menubar" addcaps="menubar,accessible" isrooted="True" usecache="True">
+				<item name="mnuHome" id="1e902e34-be0b-466b-a7f6-1720f53b998f" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=0]
+				</item>
+				<item name="mnuComputerScan" id="e911141f-af13-4dbb-8251-938d00c6bc62" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=1]
+				</item>
+				<item name="mnuUpdate" id="833202c4-8a39-4f42-913f-7fc0a56f8d09" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=2]
+				</item>
+				<item name="mnuSetup" id="74469ffd-3b84-431a-9f04-0c86375a6812" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=3]
+				</item>
+				<item name="mnuTools" id="ca7e8f03-76ed-4bae-82ed-d6ae4c3c3b88" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=4]
+				</item>
+				<item name="mnuHelpAndSupport" id="7da25802-4c6f-4ba5-8ce5-76000b62a95d" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=5]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='2']/menubar
+				</basepath>
+			</folder>
+			<folder name="eleComputerScan" id="ce9b0bd1-229f-45a5-bc32-51dec996bf03" searchtimeout="30000ms" capname="unknown" addcaps="unknown,nativewindow" isrooted="True" usecache="True">
+				<item name="lnkCustomScan" id="a4aa7c3d-f0c6-4f5d-80d9-64527589c70f" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element/text/link[@childindex=18]
+				</item>
+				<item name="lnkScanLogs" id="16acea6f-9613-461d-abae-0a7c4e07e1cd" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element/text/link[@childindex=36]
+				</item>
+				<item name="lnkSmartScan" id="a6f473dd-c259-42c9-a7be-ad715c7c8bbd" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element/text/link[@childindex=9]
+				</item>
+				<item name="lnkComputerScanSetup" id="5d4f37fc-5199-472d-b8f4-bf4298431994" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element/text/link[@childindex=37]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element
+				</basepath>
+			</folder>
+			<folder name="ComputerScan" id="66ddf195-dc0e-46ce-92ea-451bd4c9868a" searchtimeout="0ms" capname="unknown" isrooted="False">
+				<item name="cmbScanTargets" id="6f6b3efc-c056-4dde-9951-29eeafe74c87" searchtimeout="30000ms" capname="combobox" addcaps="combobox,nativewindow">
+					/form[@processname='egui']/combobox[@controlid='2063']
+				</item>
+				<item name="cmbScanProfile" id="a4d6132b-0075-4455-a022-57c3562a56ef" searchtimeout="30000ms" capname="combobox" addcaps="combobox,nativewindow">
+					/form[@processname='egui']/combobox[@controlid='2014']
+				</item>
+				<item name="btnSetup" id="2444fcc4-14f4-4b66-b8fc-1d5daf9104da" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=2075]
+				</item>
+				<item name="treCustomScan" id="9de53adf-7732-4ff7-9329-c0cdb61d7b61" searchtimeout="30000ms" capname="tree" addcaps="tree,nativewindow">
+					/form[@processname='egui']/tree[@controlid='2086']
+				</item>
+				<item name="txtPath" id="1a3f1ed3-1d7b-4a72-9cd1-ee12b3fd6b36" searchtimeout="30000ms" capname="text" addcaps="text,nativewindow">
+					/form[@processname='egui']/text[@controlid='2007']
+				</item>
+				<item name="ckbScanWithoutCleaning" id="09490ff2-b714-4d6c-9689-9a6d9bd75f5a" searchtimeout="30000ms" capname="checkbox" addcaps="checkbox,nativewindow">
+					/form[@processname='egui']/checkbox[@controlid=2024]
+				</item>
+				<item name="btnSave" id="4be997b5-9ed8-41dd-bba4-73e0e240f11d" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=2078]
+				</item>
+				<item name="btnScan" id="f99f3026-aa1c-4d82-8b06-5bddac321210" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=1]
+				</item>
+				<item name="btnScanAsAdministrator" id="63990db5-0ea9-4321-8709-678b64b80c1b" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=3]
+				</item>
+				<item name="btnCancel" id="1367cd25-8318-47a3-ad2f-c6d1098a912e" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=2]
+				</item>
+			</folder>
+			<folder name="eleUpdate" id="0f82c224-767f-4198-b8e9-7485fa503432" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="True">
+				<item name="btnUpdateNow" id="07f6ab14-b39a-422f-8d31-a42c5c665e42" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/button[@childindex=9]
+				</item>
+				<item name="btnCheckForUpdates" id="75adea9c-c99b-494e-b68e-25e03cf0982c" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/button[@childindex=17]
+				</item>
+				<item name="btnCancelUpdate" id="a2280332-fcce-472a-b3eb-aadc86c2ebbf" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/button[@accessiblename='Cancel update']
+				</item>
+				<item name="lnkDbVersion" id="99401dbe-1166-49fe-b16e-d7ee12c9c01a" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/link[@accessiblename='7496 (20120919)']
+				</item>
+				<item name="lnkTroubleshoot" id="b7caaa44-a1e2-442f-ad8e-b6739f47c06d" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/link[@childindex=7]
+				</item>
+				<item name="Enabled" id="0eb8c8e8-80e6-4051-87a3-bea15624162f" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/button[4]
+				</item>
+				<item name="btnOK" id="b24816d3-1b6f-49a9-b567-ca471649de24" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/button[@childindex=8]
+				</item>
+				<item name="Disabled" id="fd2f5c8e-089f-45c8-be29-fd215a9e8f92" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/button[9]
+				</item>
+				<item name="btnInstall" id="e3155df5-085e-48b9-900f-3e676f4e0199" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/button[@childindex=17]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']
+				</basepath>
+			</folder>
+			<folder name="eleSetup" id="cf2366ed-248d-4227-beda-77ba5d2719c3" searchtimeout="30000ms" capname="container" isrooted="True" usecache="True">
+				<item name="btnRealTimeProtect" id="b534b784-e18c-4ea2-a874-1d888c91bbf0" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=18]
+				</item>
+				<item name="btnDocumentProtection" id="5ec31811-1db5-498f-8935-7350816c0bb9" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=25]
+				</item>
+				<item name="btnRemovableMediaProtection" id="aac40513-506a-431c-a4c3-32222317b092" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=32]
+				</item>
+				<item name="btnHips" id="f7768d35-e955-4b61-9208-cbebd956bab3" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=39]
+				</item>
+				<item name="btnAntiTheft" id="dbc521f5-6b72-42a0-bf9c-e09a4c4d5ab9" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=46]
+				</item>
+				<item name="btnGamerMode" id="2a1fedc5-87cb-4406-8434-c3352934b23f" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=53]
+				</item>
+				<item name="btnAntiStealthProtection" id="d977aa19-6cd1-4156-9967-39ef34d53ba9" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=60]
+				</item>
+				<item name="btnPersonalFirewall" id="578384f4-80e4-4ed5-9bfd-199991f91620" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=79]
+				</item>
+				<item name="btnWebAccessProtection" id="8767bb7f-03ad-4f83-be1f-dd71fb1f0c55" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=98]
+				</item>
+				<item name="btnEmailClientProtection" id="8a8ee891-ccb5-4aa3-a923-09697c388420" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=105]
+				</item>
+				<item name="btnAntispamProtection" id="b8255836-6cd8-40dc-b9e6-0445ca938aa4" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=112]
+				</item>
+				<item name="btnAntiPishingProtection" id="bb3e8e7c-8754-44c5-ba2f-f3258f370d1c" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=119]
+				</item>
+				<item name="btnParentalControl" id="8673c6d7-ec82-434c-a477-e775357ea5c7" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=138]
+				</item>
+				<item name="lnkProductActivation" id="edb76169-2251-466f-bb3a-f0cd4c532be2" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=139]
+				</item>
+				<item name="lnkImportAndExportSettings" id="a69f6b20-e8f1-4a17-ae4d-c87224240d7b" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=140]
+				</item>
+				<item name="lnkEnterAdvancedSetup" id="2a20a5d0-2c57-45a0-9234-3ac57db6816b" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=141]
+				</item>
+				<item name="btnWebAccessProtectionSrv" id="434fc9f6-83d2-45ec-94c4-ffab06e0de74" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[8]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container
+				</basepath>
+			</folder>
+			<folder name="eleTools" id="01e5607d-0059-4f10-b01a-ab5c2dd5c0ae" searchtimeout="30000ms" capname="container" isrooted="True" usecache="True">
+				<item name="lnkLogFiles" id="60723afb-0197-42f2-9e18-6b67ac20c3b8" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=9]
+				</item>
+				<item name="lnkScheduler" id="5a705fef-aa45-45d4-9b1d-23a9a66a3ddf" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=17]
+				</item>
+				<item name="lnkProtectionStatistics" id="79eff352-1242-4ca1-84d1-3466d8bfab7d" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=26]
+				</item>
+				<item name="lnkQuarantine" id="dbaca765-ded6-4028-909b-322f8346f039" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=34]
+				</item>
+				<item name="lnkWatchActivity" id="3cebc0b3-4ee2-4b38-999b-af03c5c44ddd" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=43]
+				</item>
+				<item name="lnkEsetSysInspector" id="40d8dfe2-2cff-46dd-bca7-b5f54e2cb0ca" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=51]
+				</item>
+				<item name="lnkRunningProcesses" id="693a087d-9196-4035-90e3-a93eb06f7863" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=60]
+				</item>
+				<item name="lnkNetworkConnections" id="1fa111f9-332b-4ca8-9b47-a6a519448ec2" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=68]
+				</item>
+				<item name="lnkSubmitFileForAnalysis" id="41da6c6d-a6d8-4997-82bc-edcd3128454b" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=78]
+				</item>
+				<item name="lnkEsetSysRescue" id="d852b7d2-f57b-4a18-ad05-0c1a9457ddf3" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=86]
+				</item>
+				<item name="lnkEsetSocialMediaScanner" id="5c7cc8b3-4ebe-45dd-a34a-2a2e5cda95ca" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=95]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container
+				</basepath>
+			</folder>
+			<folder name="eleHelpAndSupport" id="154e1222-8eb6-45ce-9162-77caaea250f5" searchtimeout="30000ms" capname="container" isrooted="True" usecache="True">
+				<item name="lnkOpenHelp" id="d5e60c33-375e-4629-983f-ce31f3b881f9" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=6]
+				</item>
+				<item name="lnkFindQuickSolution" id="5598a579-b1ff-4697-9113-38cfc8c0c657" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=7]
+				</item>
+				<item name="lnkSearchKnowledgeBase" id="27341c17-b9d3-4e5e-a1c6-23e83f277fd7" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=8]
+				</item>
+				<item name="btnChangeLicense" id="64a123dc-ad6b-48b2-b392-d0dbd7c3acea" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=15]
+				</item>
+				<item name="lnkCustomerCareRecomended" id="492c137a-ea4e-44fe-b209-816752ad5887" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=23]
+				</item>
+				<item name="lnkCustomerCareWebForm" id="70d2215b-09f2-42fd-b1d3-7664ee4156e0" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=24]
+				</item>
+				<item name="lnkLatestNews" id="80f29b6f-8d3c-4ff6-88d5-b62ea1b5e50e" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=25]
+				</item>
+				<item name="lnkAboutESS6" id="5810ecb1-2e79-4077-b419-3f8bbe2ce7eb" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=32]
+				</item>
+				<item name="lnkVerifyLicenseValidity" id="a31069e0-3ebc-41fd-a69f-029bab8faabc" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=33]
+				</item>
+				<item name="lnkThreatEncyclopedia" id="872aa17f-8140-4c3d-8f85-3dbf8f5c693b" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=34]
+				</item>
+				<item name="lnkEset" id="36e6ce82-254f-4e4a-9d54-77f155908a30" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=35]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container
+				</basepath>
+			</folder>
+			<folder name="eleLog" id="7606cfa1-70a5-4a93-8f48-25f8a8ecaf1b" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="True">
+				<item name="celScanner" id="908d3304-bf02-4de3-83f3-1bb928734e3f" searchtimeout="30000ms" capname="cell" addcaps="cell">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/table/row[@index=0]/cell[@columnindex=1]
+				</item>
+				<item name="celThreat" id="2e6da609-4d76-425e-ad06-ab48d2c6e151" searchtimeout="30000ms" capname="cell" addcaps="cell">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/table/row[@index=0]/cell[@columnindex=4]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']
+				</basepath>
+			</folder>
+			<item name="celNrOfCleaned" id="372e1a31-3841-4650-abe4-c9fb1f7b0c6d" searchtimeout="30000ms" capname="cell" addcaps="cell">
+				/form[@processname='egui']/element/table/row[@index='10']/cell[@columnindex=0]
+			</item>
+			<item name="lnkShowLog" id="886fda1a-cf35-4bb6-87af-f296eb3e3421" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+				/form[@processname='egui']/element/element[@controlid='5']/element[@class='ESET Panel Standalone Window' and @instance='0']/element/element/text/link[@childindex=12]
+			</item>
+			<basepath>
+				/form[@processname='egui']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAKKSURBVDhPlVNLaFNREM2ygi0uBF2ICP6ogktR
+dNWWVBFJBTG4syIt1IVbXaibGDdNVy0VCi0mllpjTLU1tcEmSszLs8GYTymEfJqXmNRoalMwr0le
+kuOdS1pMcOOF4d0355y5c+fOqFRNSxRFtdvtNgiC4GHfPFl9byCsmb/z7/F4DjHiYCgUKqRSKWxu
+bkJRFG60Jx9hxCFuQ6C62BSPxyHLMrbXb3kLha3Szj9hxGFBTA1BKCoBlUqFk/3SdxjdIYzbXJhY
+9MIoLONr7BvHiFMPMsizoHtRamxxwkvHEvTmRdiiGXyUfsAZy2A+uoZHUwuwuP2cQ1zS8JpQwZLJ
+JAfEeAaasTlM+qKYjmVhlbIwR9Owpjdg8oahGZ/H59U1ziUNaVVU4Xw+z523TAtoH57DiPQLepsD
+fXcfoP/eQ+hm32M0tYGTT2zoHX3FuaQhLWWQL5dKqLBqn74/hja9GVpnEOreAXRc7+WmvjnAfa26
+FzirM/I6kIa0PECpWIRSLqHzmRPHF5Zx2RPGvo4etJ25gFZm+zuvoEcM49i7ELqmXYxbBml4AEpj
+fX2dJVXFHbsPu4btOOeK4erkGxzovoaDF7XoMVpx/lMcu0fsuP1aYNwaSLN9BUMikUCtVoU3ksKe
+xxaccifQFcziRjAJrTcOTTSPEx+i2Ds0i6WwhFq1CtLwItJTBIPBAnUbqgqmViQcmfmClqci2oUk
+jroktEx4cNjixfMw64VahXcmaXZamxopEonw96UgvvRP9FkEdL/145JjBf0zIryrGY4Rh7ikaZ4D
+EwH8SZUyJxe3ZBSptdmp7Jk4Vhc3tjJF2h6mQCBQoPvlcjnI7DQy2pOPsH8O09+T9b/j/Ad7CszQ
+ZWFD+QAAAABJRU5ErkJggg==
+			</icon>
+		</appfolder>
+		<appfolder name="frmAdvancedSetup" id="06958e5b-d040-4386-b508-b3c54937eb1a" searchtimeout="30000ms" capname="form" isrooted="True" usecache="True">
+			<item name="ckbEnableHIPS" id="8a9e2f95-8922-4d74-b259-f45b1e176cb7" searchtimeout="30000ms" capname="checkbox" addcaps="checkbox,nativewindow">
+				/form[@processname='egui']/container[@caption='' and @class='#32770' and @instance='0']/checkbox[@childindex=1]
+			</item>
+			<item name="ckbEnableSelfDefense" id="cc863a98-5194-45db-858f-bc395117c572" searchtimeout="30000ms" capname="checkbox" addcaps="checkbox,nativewindow">
+				/form[@processname='egui']/container[@caption='' and @class='#32770' and @instance='0']/checkbox[@childindex=2]
+			</item>
+			<item name="btnOK" id="9d04500d-d750-4a83-8c2d-461974ba2d3d" searchtimeout="30000ms" capname="button">
+				/form[@processname='egui']/button[@controlid=1]
+			</item>
+			<item name="treAdvancedSetup" id="a48a5ceb-0406-4fdf-896f-55bae918b558" searchtimeout="30000ms" capname="tree" addcaps="tree,nativewindow">
+				/form[@processname='egui']/tree[@controlid='4570']
+			</item>
+			<item name="ckbEnableDetection" id="cc8fe2a9-9a31-4383-80c5-5149af76be8c" searchtimeout="30000ms" capname="checkbox" addcaps="checkbox,nativewindow">
+				/form[@processname='egui']/container[@caption='' and @class='#32770' and @instance='0']/checkbox[@childindex=1]
+			</item>
+			<folder name="Update" id="d1d9e340-8050-412b-a557-6c2f0ae17e9e" searchtimeout="0ms" capname="unknown" isrooted="False">
+				<item name="txtUsername" id="51d9ef17-1e3c-422a-87f5-1bc28e464871" searchtimeout="30000ms" capname="text" addcaps="text,nativewindow">
+					/form[@processname='egui']/container[@caption='' and @class='#32770' and @instance='0']/text[@controlid='2005']
+				</item>
+				<item name="txtPassword" id="b95807e4-c98e-4d0f-b2fd-ff5216ec9a77" searchtimeout="30000ms" capname="text" addcaps="text,nativewindow">
+					/form[@processname='egui']/container[@caption='' and @class='#32770' and @instance='0']/text[@controlid='2006']
+				</item>
+				<item name="rbtPreRelease" id="3a5276e3-20ba-46ee-92ee-9cccd1ba554c" searchtimeout="30000ms" capname="radiobutton" addcaps="radiobutton,nativewindow">
+					/form[@processname='egui']/container[@caption='' and @class='#32770' and @instance='0']/radiobutton[@controlid=2098]
+				</item>
+			</folder>
+			<item name="ButtonActivate" id="c0235263-7f44-40de-8ca7-f2dbfb2aafd0" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@text='&amp;Activate']
+			</item>
+			<item name="rbtAlwaysScan" id="76845d3d-bb6c-400f-8fa9-a3a071227195" searchtimeout="30000ms" capname="radiobutton" addcaps="radiobutton,nativewindow">
+				/form[@processname='egui']/container[@caption='' and @class='#32770' and @instance='0']/radiobutton[@controlid=1277]
+			</item>
+			<basepath>
+				/form[@processname='egui']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAAk9JREFUOE+lk9tL02Ech/eXdBFRUhEZBFF08Lhy5oWEFWFXBZEEEpQZ
+gVRowUBLClI7CGUnKypI6kKwIvOQI23OuTbnPEzdpm5zh99pv6d3W6AG2oUvPJffz+d5vy+vwbDW
+09hq4d4bJ7Utg9Q0/+Jqk4Vz5i5OVfdQWvWNkgttFJe/pqjs2TIOn32K8VglhvqXdpo7NJraNe60
+yZjfRql+EaLqyRyVzQHO3/dTdneK03UTnDR7OF7j5sg1F4UVFtZl7MJQ12Kh/l2Q2+8jXH40zZlb
+Hkpvujhxw8nR6w6Kq+wUXRnCVGnj0KVBjBVW8i9aySrvYUOmEUNt4ysCwTiRmMaCIBxVCUUUgoK5
+cBpfUME7K+PxyTi9ErZxiW6bl83bd4qAhlZWO7oOigpRSWc+mmA6pDEWULG6fWzaugPDw+cfV5zX
+EiApOgvxBLMLGlPzGh6/wu8phd7h/wQkRLMshlPNkQQzonlcNLumFWwTMl221QKS2poYlnVCsQT+
+sMbknIbbp2CfVBgYlflqFQFbVrjCorrOrBhOq6s4hLp1TKZvRKKjf4WAlLqaVE+k1YNpdWdKXeGn
+W6bbKdFuSQZkLl9iauMaxMS9g0vVZ9Lq/R6JXpdEpz3Op75/AsQs6t+th+M6gdTWVUaT6t5F9e+O
+OF9sMT70+tiYNHiw5BlFOZJ483AcEQCT8+D26wx7NQbGNH6MqHQ6FD4PyamA9RnbxF9oeEz+wULy
+jCZyBTmCbEFWvokDeSb25xawT7A3p4A92Wl2Z6XJKyxhrZ/Z8Af+1+a2LuSr2AAAAABJRU5ErkJg
+gg==
+			</icon>
+		</appfolder>
+		<appfolder name="frmFirefox" id="a45f8488-655d-46f6-8afc-744a9e18beb2" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow" isrooted="True" usecache="True">
+			<item name="btnCloseX" id="eb503409-a443-4420-b1d9-13564a917619" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='firefox']/titlebar/button[@accessiblename='Close']
+			</item>
+			<item name="txtConnectionWasReset" id="a38ead7d-d082-4f74-9cda-530cd012944b" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='firefox']/container/container/container/element/container/element/element[1]/element/text[@accessiblename='The connection was reset']
+			</item>
+			<item name="btnTryAgain" id="08f68f69-ce9d-4f13-81bd-c7f9019ce1dd" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='firefox']/container/container/container/element/container/element/button[@accessiblename='Try Again']
+			</item>
+			<basepath>
+				/form[@processname='firefox']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAANsSURBVDhPbZN9TJNXFMbv+5bSVwVLaSstLhCH
+YuZgE1hkqASKfGiRz7Xo+AyzQyc6XB2idYugkUr/UGExouIHBIJBQqGsiA6VzGQIhJEAAyEYBbQU
+mBaJG1Ojj33fTYwZJ3mSk3vP87vnntxLiD0G08W1wxmSADb3yyr9LDZi+5kdCSkD/lmlj1l9mnmq
+a1XyibqPk4vT2Jr/xVCGBKwSFRlHI+Ny77H5lQABLtx/xqmw04JNRS1Ysa0cX4YlXDPHMOvmIHqG
+TmUNUwWuHORtXuXrgKK+aRh6bTjUOQlVRQ980krQeykC9UnS2VaNKImDFIsdyoa/deMAtpNesByR
+cfl5b5pTII9GbscU1MYh+GSeRnerBiN1CjSlSqfbv5fKSNmHjt0PDshfseYpwzKMHXCHVfeum29c
+aaTfGEe86T68NReh/2kv/urfijt5HrilERWTywGOE1a9G3f6VIEYo9/JMar9CE+q87gO4pv/RJzx
+IYJL+7F8RyXScnbD0qbCWI0fWrYwPcQYzJ+1Fkk4wCOdBI/KAjnN1MagwpfGunNDWHuiA5/k1mNZ
+VjVWRebA1p6Ap78E4ecY/gtiiiKvrXoJZo67wryeQbknb+7+orACuKeUwSPjIjy3lECuOgVF0tfA
+QAhsravRsJF6TZoiqZmBXUI81osxsl+EJh8KNQE0hOt1ECsNqInzQtXODZBF6yGNNiBfGwX85ouJ
+cjnMsfQzcjWUMt7auIADsOpQCtAVzeB3tQsG05zQmSLlOpJGFcI9KBvjFR74p06Gfq0jzErSRswK
+kly/hv67L9OZA1h/lGDwKzFuKxkY1/D/NQfpsE/hh9uFK/Giyg2TRQJcjWPQnOh2mJg2k4UNwVR3
+i4LBw/0umMwXYyxvCYZzlqL6cydUx8vRkLAY3dsXwKZ3gcU+ry6NAM1bhU/bd3rKuMd0JZQEVq6l
+JlrCBBjKFmJcJ8K4fR6jOjEsB0UY2SvEvezFGN3jjLvaRbiexJs9rqDf/xepK0h6iT812RjCw68R
+AvR+sRB96kXoTXbCH+nO6ElhcDNRgNpNglmVF9HO96eivHiU4YcPKOtZf/p5fSgFUyRBo12mCBo1
+4Q4vj63kT3vzqLN2s3I+wBL7oq9dict51NFwPtWoYug2NUPfCeVTJhZu31P/V8PWcvEG3uTiGswK
+FD8AAAAASUVORK5CYII=
+			</icon>
+		</appfolder>
+		<appfolder name="frmWlmail" id="1957be99-14f6-4689-b806-846ac156064e" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow" isrooted="True" usecache="True">
+			<item name="triInboxImap" id="536b7827-2bbb-4812-96cc-a8eb71038f5e" searchtimeout="30000ms" capname="treeitem" addcaps="treeitem,accessible">
+				/form[@processname='wlmail']/element[@class='Outlook Express Native Browser Class']/container/tree/treeitem[6]
+			</item>
+			<item name="triJunkPop" id="15619e0a-adea-4acb-aafe-82044dcad6f2" searchtimeout="30000ms" capname="treeitem" addcaps="treeitem,accessible">
+				/form[@processname='wlmail']/element[@class='Outlook Express Native Browser Class']/container/tree/treeitem[16]
+			</item>
+			<item name="triInboxPop" id="9aa07aa4-0416-4888-93ce-e1f06f75e609" searchtimeout="30000ms" capname="treeitem" addcaps="treeitem,accessible">
+				/form[@processname='wlmail']/element[@class='Outlook Express Native Browser Class']/container/tree/treeitem[13]
+			</item>
+			<item name="lsiMsg" id="7a6053a8-f9a3-4c54-a782-4774dea8ba4b" searchtimeout="30000ms" capname="listitem" addcaps="listitem,accessible">
+				/form[@processname='wlmail']/element[@class='Outlook Express Native Browser Class']/container/element/element/element/element/element/container/list/listitem[@childindex=2]
+			</item>
+			<item name="btnNew" id="4d634bfc-3830-4d33-9a4a-19da4e1ff0d3" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='wlmail']/element[@class='Outlook Express Native Browser Class']/container/toolbar[@accessiblename='Command Area']/button[@accessiblename='New']
+			</item>
+			<item name="txtTo" id="74ae5f05-aaae-492a-962e-cb3d9e3e64eb" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='wlmail']/element[@class='Note Native Class']/container/container[@accessiblerole='Pane']/text[@childindex=1]
+			</item>
+			<item name="txtSubject" id="40c69a1e-29cf-487d-a572-96b4968aec73" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='wlmail']/element[@class='Note Native Class']/container/container[@accessiblerole='Pane']/text[@childindex=3]
+			</item>
+			<item name="btnAttach" id="e3526d76-9b6d-42db-a4c6-8f57aaa7a6b7" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='wlmail']/element[@class='Note Native Class']/container/toolbar[@accessiblename='Command Area']/button[@accessiblename='Attach']
+			</item>
+			<item name="btnSend" id="3012b53a-b98d-4200-b859-f84567aaf504" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='wlmail']/element[@class='Note Native Class']/container/toolbar[@accessiblename='Command Area']/button[@accessiblename='Send']
+			</item>
+			<item name="btnCloseX" id="6bb5bef9-1433-4c80-bd95-fd24f48f1e6f" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='wlmail']/element[@class='Browser Native Window Bar Class']/container/button[@accessiblename='Close']
+			</item>
+			<item name="btnCloseTX" id="e76694ae-7ca0-4f6f-a7e3-30aeb01989af" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='wlmail']/titlebar/button[@accessiblename='Close']
+			</item>
+			<item name="btnClose1X" id="fcc3efc5-febb-424e-95e7-6f16606179b6" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='wlmail']/element[@class='Note Native Window Bar Class']/container/button[@accessiblename='Close']
+			</item>
+			<item name="btnNo" id="9de04088-125b-4f4b-98c6-2592d8596a3a" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='wlmail']/button[@text='&amp;No']
+			</item>
+			<item name="btnSync" id="6f1dd512-1f49-49d3-bb94-78e2faa78928" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='wlmail']/element[@class='Outlook Express Native Browser Class']/container/toolbar[@accessiblename='Command Area']/button[@childindex=7]
+			</item>
+			<item name="txtSubjectIncoming" id="4c48afab-fae2-43e2-b0f1-def7947ce3e1" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='wlmail']/element[@class='Note Native Class']/container/container[@accessiblerole='Pane']/text[@accessiblename='Subject:']
+			</item>
+			<item name="txtPath" id="8586a704-46e1-4c64-b4ac-b23de14eefed" searchtimeout="30000ms" capname="text" addcaps="text,nativewindow">
+				/form[@processname='wlmail']/combobox[@controlid='1148']/text[@controlid='1148']
+			</item>
+			<item name="btnOpen" id="10a75bfc-0ab7-4eef-b11d-5cffd0bfcbac" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='wlmail']/button[@controlid=1]
+			</item>
+			<basepath>
+				/form[@processname='wlmail']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAKhSURBVDhPjZNdSFNhGMeHFn3dBEHWrdVFV0EY
+lFQQUkHlnM3ACLGyJF1SXUVfGHXRjYlalooRpDnmbPnV2eb8nN9uTtuSlea3bq0sv7F2dt5/zzmn
+MsPAA/+Lc57n93seOO+rUCzzJFtjsNIsxyuSrWqYpyphnq6AeaYc5tkymOdewzRvgGmhBKbveph+
+6GiIGksEyNuAlcbIa5Fcf/IfQe564H0+4M4FerIBVybQnQY4HgC2e0DbHaDlOkB9RuElNHXRsiCF
+8+F/uWL0QczvOqzXgKfrYGSF0NSqZEFS5Se4vwHvvgJvJ4DOL0C7DxifB0bngKFZYGAGEPtQpwGy
+14JDAS7XKGVBYrkXLoK7CbZ/pk0JbvICIwRDqZDSNw1cqqCPNYnAozWyoDpSFpwr9aKLptoIbqEh
+DdRXOw4M0mQUyIIPJEgoo4LlPJC1WhKkVJ2QBXEGj7RyM8H1HuohmBsFPtLavQSKsHsKEPskQcYq
+pJiPSZEE9y2daBSnUt08BrwhuHQYKBkCdINA0QAt0g/E6sksCtKDF38fOsPANT9H6/gEeAY5wmIK
+CRRhMTE6sqcFSflzgPw5IWyyQYWusR5UjAh4RVOLf039G9b2+3GDcyw9OKLFn73VE9DugLP1Fm4b
+O3DR4IaqaBiRRSOI0/cigd5vcjY8rLLA1ZEK1h3pRFfUXdYaHcva1FGKQMGuq/7HITMCt5uKqh7m
+OHMB9kQ6kqlBzHb2MHPExTPX6WrmVAYE61E+YDniFWqOO4V6VTVrjklXoPhUMJ+37Yk/Y1NfQLvT
+xxr3TsK+h05TGNCxD6zt4EKA2+/hdWF9gdIDTUKtMou1x0fAmRS65CIx/aFwPif0mT9ji8WfttEu
+JXOznc/fbhUM4S+YVR2x3NX9CVw5lz1LkfEbAAAAAElFTkSuQmCC
+			</icon>
+		</appfolder>
+		<appfolder name="frmRegistryEditor" id="dfde1da3-9b8b-4d02-9583-074ca0c13e86" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow" isrooted="True" usecache="True">
+			<item name="btnYes" id="9049162c-4955-4520-95ab-a1b6c326ed9c" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@title='Registry Editor']/button[@controlid=6]
+			</item>
+			<item name="btnNo" id="2dcd672c-bb98-497a-9772-385d600d74e5" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@title='Registry Editor']/button[@controlid=7]
+			</item>
+			<item name="btnOK" id="7b1b2a74-fdd4-4223-86d7-d7b58d0f4e74" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@title='Registry Editor']/button[@controlid=2]
+			</item>
+			<item name="btnYes7" id="1112dd75-b9f0-46af-94a2-d77f2977e6d0" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@title='Registry Editor']/container/element[@class='CtrlNotifySink' and @instance='0']/button[@text='&amp;Yes']
+			</item>
+			<item name="btnOK7" id="c62b3f62-7582-4f62-a5c5-aa1b5a480003" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@title='Registry Editor']/container/element[@class='CtrlNotifySink' and @instance='0']/button[@text='OK']
+			</item>
+			<basepath>
+				/form[@title='Registry Editor']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAKBJREFU
+OE+VUwkKwCAM29P9+bZG7ZmCCgVBkzaJPs/BGmO8B9f4FQHL+k/vSdBZSgjmFCC5mkhJHLidSC6z
+Cp3JRBCvnZZmdNljL2IhyhMZGFYts/beEWAK88EMBSMDbAOn9lnOSM1MY4pOKyhLKXF67btLAHFi
+ezRFQifnVAK6N3JaD3BAqpB1JoYUvIQsh/2HnILvSuTQH2c5+8zrnoI/l75ciPMb/+oAAAAASUVO
+RK5CYII=
+			</icon>
+		</appfolder>
+		<appfolder name="frmLogApplication" id="c2fd2ca9-7dbf-4228-a0c3-7d50796eca14" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow" isrooted="True" usecache="True">
+			<item name="btnDoTests" id="84e20ac5-75e1-4358-93a1-683cb2d0ea9a" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@title~'^Eset\ Kernel\ Module\ Test\ A']/button[@controlid=1]
+			</item>
+			<item name="btnCloseX" id="14e6873f-8581-4689-8a21-c5eea2c7440f" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@title~'^Eset\ Kernel\ Module\ Test\ A']/titlebar/button[@accessiblename='Close']
+			</item>
+			<basepath>
+				/form[@title~'^Eset\ Kernel\ Module\ Test\ A']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAK9JREFU
+OE+FkgEOwzAIA7Of72n5WYfpnIILCRKKWuDiAJ/vGNdozGJuPMs0ANQtEdBrzunO7zK3KmahngC9
+8vHDrlgB+1g3qgIAkEv357N4BQKA0uOp+Q5ILoCoKCqg8hbAwg5AJQlAqSjqANoHB3Rji6BqrF6L
+pN3YYmE1ViyXy42g1PXDWB0QITo6bWIx2gdAUKeg2oukoFycw2IdAbvn+YXWvb8947yLsunzGP0B
+ByyzrqPhRMAAAAAASUVORK5CYII=
+			</icon>
+		</appfolder>
+		<appfolder name="frmInfoWindow" id="ae03ce8a-6aaa-46cf-bb15-d909e916c0cf" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow" isrooted="True" usecache="True">
+			<item name="btnOK" id="a5a8a0a4-1548-4741-9dcb-740e17f588c6" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@title='EKMT Information Window']/button[@text='OK']
+			</item>
+			<basepath>
+				/form[@title='EKMT Information Window']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAK9JREFU
+OE+FkgEOwzAIA7Of72n5WYfpnIILCRKKWuDiAJ/vGNdozGJuPMs0ANQtEdBrzunO7zK3KmahngC9
+8vHDrlgB+1g3qgIAkEv357N4BQKA0uOp+Q5ILoCoKCqg8hbAwg5AJQlAqSjqANoHB3Rji6BqrF6L
+pN3YYmE1ViyXy42g1PXDWB0QITo6bWIx2gdAUKeg2oukoFycw2IdAbvn+YXWvb8947yLsunzGP0B
+ByyzrqPhRMAAAAAASUVORK5CYII=
+			</icon>
+		</appfolder>
+		<appfolder name="frmActivation" id="9ad94989-f95c-4306-babc-5e333bf0c10e" searchtimeout="30000ms" capname="form" isrooted="True" usecache="True">
+			<item name="btnCancel" id="502a9cfa-8e48-4aba-b181-57912c46c4cf" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/container/button[@childindex=5]
+			</item>
+			<item name="btnUsername" id="ed76b0ca-17e3-44d8-954f-b0aa2be73b9d" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='egui']/container/element/text/button[@childindex=13]
+			</item>
+			<item name="btnNext" id="2756f32c-be8c-464a-8576-079ebac0337a" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@childindex=5]
+			</item>
+			<item name="txtUser" id="1ef21bc2-07ce-48ba-986f-3acf278147a7" searchtimeout="30000ms" capname="text" addcaps="text,nativewindow">
+				/form[@processname='egui']/container[@caption='' and @class='#32770' and @instance='0']/text[@controlid='4621']
+			</item>
+			<item name="txtPassword" id="7ab27040-07c2-4574-bbb6-89813edb13e2" searchtimeout="30000ms" capname="text" addcaps="text,nativewindow">
+				/form[@processname='egui']/container[@caption='' and @class='#32770' and @instance='0']/text[@controlid='4622']
+			</item>
+			<item name="btnActivate" id="09aa0c6b-3421-4074-8eca-ac4b465e3179" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@childindex=6]
+			</item>
+			<item name="btnFinish" id="b248467b-ec39-44e5-aff8-4ccf5f8a9827" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@childindex=8]
+			</item>
+			<item name="btnSkip" id="2d31fbd6-6ba4-482a-ae6a-887c8be804c2" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@controlid=2]
+			</item>
+			<item name="ImportAndExportSettings" id="11c2ef37-7c80-49e2-a587-9c31b8600d02" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow">
+				/form[@processname='egui']
+			</item>
+			<basepath>
+				/form[@processname='egui']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAAk9JREFUOE+lk9tL02Ech/eXdBFRUhEZBFF08Lhy5oWEFWFXBZEEEpQZ
+gVRowUBLClI7CGUnKypI6kKwIvOQI23OuTbnPEzdpm5zh99pv6d3W6AG2oUvPJffz+d5vy+vwbDW
+09hq4d4bJ7Utg9Q0/+Jqk4Vz5i5OVfdQWvWNkgttFJe/pqjs2TIOn32K8VglhvqXdpo7NJraNe60
+yZjfRql+EaLqyRyVzQHO3/dTdneK03UTnDR7OF7j5sg1F4UVFtZl7MJQ12Kh/l2Q2+8jXH40zZlb
+Hkpvujhxw8nR6w6Kq+wUXRnCVGnj0KVBjBVW8i9aySrvYUOmEUNt4ysCwTiRmMaCIBxVCUUUgoK5
+cBpfUME7K+PxyTi9ErZxiW6bl83bd4qAhlZWO7oOigpRSWc+mmA6pDEWULG6fWzaugPDw+cfV5zX
+EiApOgvxBLMLGlPzGh6/wu8phd7h/wQkRLMshlPNkQQzonlcNLumFWwTMl221QKS2poYlnVCsQT+
+sMbknIbbp2CfVBgYlflqFQFbVrjCorrOrBhOq6s4hLp1TKZvRKKjf4WAlLqaVE+k1YNpdWdKXeGn
+W6bbKdFuSQZkLl9iauMaxMS9g0vVZ9Lq/R6JXpdEpz3Op75/AsQs6t+th+M6gdTWVUaT6t5F9e+O
+OF9sMT70+tiYNHiw5BlFOZJ483AcEQCT8+D26wx7NQbGNH6MqHQ6FD4PyamA9RnbxF9oeEz+wULy
+jCZyBTmCbEFWvokDeSb25xawT7A3p4A92Wl2Z6XJKyxhrZ/Z8Af+1+a2LuSr2AAAAABJRU5ErkJg
+gg==
+			</icon>
+		</appfolder>
+		<appfolder name="frmImport" id="7734735c-c6bf-4d76-afcf-64ba93944358" searchtimeout="30000ms" capname="form" isrooted="True" usecache="True">
+			<item name="rbtImportSettings" id="fa530b55-e805-4cf7-8d27-fdb3572eab1e" searchtimeout="30000ms" capname="radiobutton" addcaps="radiobutton,nativewindow">
+				/form[@processname='egui']/radiobutton[@childindex=2]
+			</item>
+			<item name="txtPath" id="61376151-4884-4cac-a942-d6e2f90636a2" searchtimeout="30000ms" capname="text" addcaps="text,nativewindow">
+				/form[@processname='egui']/text[@childindex=5]
+			</item>
+			<item name="btnOK" id="d2ff3def-333d-445c-9b6c-e12c2bc55909" searchtimeout="30000ms" capname="button" addcaps="text,nativewindow">
+				/form[@processname='egui']/button[@controlid=1]
+			</item>
+			<item name="Enabled" id="5b243ccc-d8a8-4d21-8277-f48bb025c260" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='egui']/element/element[@controlid='5']/element/element/element/text/button[1]
+			</item>
+			<basepath>
+				/form[@processname='egui']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAAk9JREFUOE+lk9tL02Ech/eXdBFRUhEZBFF08Lhy5oWEFWFXBZEEEpQZ
+gVRowUBLClI7CGUnKypI6kKwIvOQI23OuTbnPEzdpm5zh99pv6d3W6AG2oUvPJffz+d5vy+vwbDW
+09hq4d4bJ7Utg9Q0/+Jqk4Vz5i5OVfdQWvWNkgttFJe/pqjs2TIOn32K8VglhvqXdpo7NJraNe60
+yZjfRql+EaLqyRyVzQHO3/dTdneK03UTnDR7OF7j5sg1F4UVFtZl7MJQ12Kh/l2Q2+8jXH40zZlb
+Hkpvujhxw8nR6w6Kq+wUXRnCVGnj0KVBjBVW8i9aySrvYUOmEUNt4ysCwTiRmMaCIBxVCUUUgoK5
+cBpfUME7K+PxyTi9ErZxiW6bl83bd4qAhlZWO7oOigpRSWc+mmA6pDEWULG6fWzaugPDw+cfV5zX
+EiApOgvxBLMLGlPzGh6/wu8phd7h/wQkRLMshlPNkQQzonlcNLumFWwTMl221QKS2poYlnVCsQT+
+sMbknIbbp2CfVBgYlflqFQFbVrjCorrOrBhOq6s4hLp1TKZvRKKjf4WAlLqaVE+k1YNpdWdKXeGn
+W6bbKdFuSQZkLl9iauMaxMS9g0vVZ9Lq/R6JXpdEpz3Op75/AsQs6t+th+M6gdTWVUaT6t5F9e+O
+OF9sMT70+tiYNHiw5BlFOZJ483AcEQCT8+D26wx7NQbGNH6MqHQ6FD4PyamA9RnbxF9oeEz+wULy
+jCZyBTmCbEFWvokDeSb25xawT7A3p4A92Wl2Z6XJKyxhrZ/Z8Af+1+a2LuSr2AAAAABJRU5ErkJg
+gg==
+			</icon>
+		</appfolder>
+		<item name="btnOK" id="9764aa5f-82b2-4827-9b56-c2ca326e76db" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+			/form[@processname='egui']/button[@controlid=1]
+		</item>
+		<appfolder name="frmSysInspector" id="fc59ecd0-311b-4cd8-825b-b10f65d1a568" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow" isrooted="True" usecache="True">
+			<item name="cmbDetail" id="366c8b10-2ddf-4c12-ac0e-77a810397e48" searchtimeout="30000ms" capname="combobox" addcaps="combobox,nativewindow">
+				/form[@processname='SysInspector']/combobox[@controlid='1010']
+			</item>
+			<item name="btnCloseX" id="72fb2194-e65f-4e9e-82ae-56c5a0dca72c" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='SysInspector']/titlebar/button[@childindex=2]
+			</item>
+			<item name="btnNo" id="c7095c61-b346-4500-9fba-f2bab19443f1" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='SysInspector']/button[@childindex=3]
+			</item>
+			<basepath>
+				/form[@processname='SysInspector']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAAtJJREFUOE9dU10oq3EYf49aam6kIUfIWL6ld/n+ms3nRpLIRzQfQ3LB
+nbjkQihJatuRWy6UtpAUZvcnSYlyu8PNcrGVUtvvPM9zOs6xt573/3/fnt/z+z1f35SYR1VVY1JS
+kiMuLs4UHx//XaPRsMcvOn1vb28/Li4ufsZi5Ds1NTWhvr7eZTKZIlarFVtbWzg7O8Pl5SUODw+x
+sLAAh8MRmZiYcJWWliZ8CZKWlqZtbGz0k2F/fx9XV1fY3d3F+vo6Njc3cXJygqOjI9zf32NpaYmD
++Y1Go/YzCH246+rqcHp6ivPzc3R0dKChoQGtra3o6urC8PAwpqen4fP5EAwGsbi4iNHRUbcEyMnJ
+UauqqqIs+fr6GnRHdXU1amtrYbFYMDU1hdfXV8zOzmJ+fh43Nze4u7vDyMhIlHxVhYrmpLyxvb0t
+zBUVFSgvL5eTAzw/P+Pl5QVzc3OYmZnB5OQkDg4O5E7+ToXkP7G829tbUDAB0z+UlZXB4/EgHA7j
+4eEBQ0ND6O/vl5S4uHt7eyDiJ6WysjK0urqK4+NjAbN8ZmfGQCCA9/d3qQ2raWlpgdlsxsbGBrxe
+L/uGFXqFVlZWpHg1NTVoampCc3MzlpeX8fHxIfK5aKyKA7Otra1Ja0llWKFCfKbALJ2dnSLVbrdL
+y7h4eXl5yM/PR2FhIQoKCrCzsyME9P9JIVYnF89ms6Gnp0dypWFBX1+ftLKkpAQGgwG5ublifKfO
+SaCsrCynQg4qsUZ7e3sFPD4+joGBAbS3t0tLi4uLBZidnR1rUa1Wq8ostLW1uRk8NjYmYE6Dp5Lz
+ZtnMSGzIyMgQy8zMRHJy8p9B4odHmST7BwcH0d3dLUXkgnIrOX+9Xi/A9PR0sZSUFD/B/o3y32Wi
+FrmoVRHOnVtKSyMBWD4HIKJIYmKii/y/LtP/m0VyjQR0FhUVPRI4ROwhYn3U6XROytkYu8q/AZ1c
+qgKCgY1XAAAAAElFTkSuQmCC
+			</icon>
+		</appfolder>
+		<appfolder name="frmError" id="5a1bdb0d-06cc-4406-9b05-c4c8c6bed6fa" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow" isrooted="True" usecache="True">
+			<item name="btnOK" id="5d002a49-4a3b-4c0b-88f1-38673666afd0" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='explorer']/button[@controlid=2]
+			</item>
+			<basepath>
+				/form[@processname='explorer']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAr1JREFU
+OE91k29I00Ech3/7NZbp5tyyWSpWDDOsIQmlBhZUkvkilLLmhLJSS0NZRChI5pxUhjGT0ilmKg6F
+/IO6KVmt3CzRln9TE23TWbnRWKISKNSnm/Yi2Dw4Ptxxz8OXu+8xKBeDy+V6eXtvP7A/OCTUi7+V
+LxKFRfJ4PjtpmhtQkJcW92V2uINgq06oTCZr6enpXdDrDdDrh9HUpENN/Vs8a/+Ap7ppFHcZcSjk
+vIZJbTlIYJaTYHBwBIrqVjx6MYTaoTlol1bQ9xvQrQJNC0DpV+B4ZOYIi+KdIrCbk6CkWPmuYuAH
+HhiBKgvQTCD1EtBCstoKFJmAmOjcSTfKW0xgDyeBWHzlfr3BgpyJ9cPKb0Dl/Ho+nAFuk/2EzAar
+Oy1IJjDHSSAUBke3984hbQDI+gTkTQLyKUBGMnsMSCf74qzOBTbtl01gnqsHYDU3GxCvBy71Adc+
+rkOOvNwPnOsBEp/MgcMIuEtgvisBlZ9f9T6+xY4YLRDbDZwhMkc61qc7V5Be+BlchlBJYIFLgUR8
+o/RCvQWhbUC4BjjcAUhfLaOwYQZpqXW2IL9YnSdjV9GGApHoaEJq3XeEtf5Bru4XVM1GZGS8RFRU
+LYL8T+jYtG8Ok2IfcdkHjpJSUrJLFMpBqNXTUKmGUVbWR+DytXk27p7Fy8Nf4vIFHHBkZEyS3W7H
+7OxPLC4ukjQT0RiSk1WIjS2HTKbBxUS5gUWxAslxhos+SC6wWq1rsM1mg9Fogk43AYWiCxJJOeRy
+DW5KKy3u9LYkAns6CQQCYYRe379sNpthMs1gfHwKWu0oqqvfkHuoIaLXiAiRGDzoHdKN+oDp4x0o
+ll6XjzY+166q1X3kQ/WiooIIrirm9+0+2c1l7Hq84V/4V5Ibk+KEcyjfW9xNgXU8em8bnw5q96L3
+NLJp/zubKe6x/8v/Cxb1kZ1PXAMbAAAAAElFTkSuQmCC
+			</icon>
+		</appfolder>
+		<appfolder name="frmNewVersion" id="70ca5a75-7b27-4ffc-a470-31d33c93852a" searchtimeout="30000ms" capname="form" isrooted="True" usecache="True">
+			<item name="btnNo" id="835af20b-a8ad-48ee-9e69-1fef7369d8ba" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@childindex=5]
+			</item>
+			<item name="btnYes" id="308d4250-2d28-4291-a12d-a82308dc0f01" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@childindex=4]
+			</item>
+			<basepath>
+				/form[@processname='egui']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAAk9JREFUOE+lk9tL02Ech/eXdBFRUhEZBFF08Lhy5oWEFWFXBZEEEpQZ
+gVRowUBLClI7CGUnKypI6kKwIvOQI23OuTbnPEzdpm5zh99pv6d3W6AG2oUvPJffz+d5vy+vwbDW
+09hq4d4bJ7Utg9Q0/+Jqk4Vz5i5OVfdQWvWNkgttFJe/pqjs2TIOn32K8VglhvqXdpo7NJraNe60
+yZjfRql+EaLqyRyVzQHO3/dTdneK03UTnDR7OF7j5sg1F4UVFtZl7MJQ12Kh/l2Q2+8jXH40zZlb
+Hkpvujhxw8nR6w6Kq+wUXRnCVGnj0KVBjBVW8i9aySrvYUOmEUNt4ysCwTiRmMaCIBxVCUUUgoK5
+cBpfUME7K+PxyTi9ErZxiW6bl83bd4qAhlZWO7oOigpRSWc+mmA6pDEWULG6fWzaugPDw+cfV5zX
+EiApOgvxBLMLGlPzGh6/wu8phd7h/wQkRLMshlPNkQQzonlcNLumFWwTMl221QKS2poYlnVCsQT+
+sMbknIbbp2CfVBgYlflqFQFbVrjCorrOrBhOq6s4hLp1TKZvRKKjf4WAlLqaVE+k1YNpdWdKXeGn
+W6bbKdFuSQZkLl9iauMaxMS9g0vVZ9Lq/R6JXpdEpz3Op75/AsQs6t+th+M6gdTWVUaT6t5F9e+O
+OF9sMT70+tiYNHiw5BlFOZJ483AcEQCT8+D26wx7NQbGNH6MqHQ6FD4PyamA9RnbxF9oeEz+wULy
+jCZyBTmCbEFWvokDeSb25xawT7A3p4A92Wl2Z6XJKyxhrZ/Z8Af+1+a2LuSr2AAAAABJRU5ErkJg
+gg==
+			</icon>
+		</appfolder>
+		<appfolder name="frmOutlook2010" id="ff32e716-dc2b-4663-9744-5a00fbaa1137" searchtimeout="30000ms" capname="form" isrooted="True" usecache="True">
+			<item name="btnMaximize" id="a2089d92-067c-4927-ad40-9470635f6af8" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='OUTLOOK']/container[@caption='MsoDockTop']/container/element/element/container/button[@accessiblename='Maximize']
+			</item>
+			<item name="btnNewEMail" id="2e201bad-8241-4bb0-b7ed-9123fc1aab44" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='OUTLOOK']/container[@caption='MsoDockTop']/container/element/element/container/container/container/container/toolbar[@accessiblename='New']/button[@accessiblename='New E-mail']
+			</item>
+			<item name="btnSendReceive" id="2cdbb15f-4d27-442b-a782-6118fc746a51" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='OUTLOOK']/container[@caption='MsoDockTop']/container/element/element/container/container/container/container/toolbar[@accessiblename='Send/Receive']/button[@accessiblename='Send/Receive All Folders']
+			</item>
+			<item name="txtTo" id="eb73bf86-fbbe-4921-bcbe-86b45fde7f1a" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='OUTLOOK']/element[@controlid='103']/element[@controlid='258']/container[@caption='']/element[@controlid='4099']/text[@accessiblename='To']
+			</item>
+			<item name="txtSubjectTo" id="d768f4d0-1a76-4569-ad3f-bca5714dc931" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='OUTLOOK']/element[@controlid='103']/element[@controlid='258']/container[@caption='']/element[@controlid='4101']/text[@accessiblename='Subject:']
+			</item>
+			<item name="btnAttach" id="dedb5cb0-cfbe-4a85-b149-dd192cfcf51a" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='OUTLOOK']/container[@caption='MsoDockTop']/container/element/element/container/container/container/container/toolbar[@accessiblename='Include']/button[@accessiblename='Attach File']
+			</item>
+			<item name="btnSend" id="cbd308ee-c836-41c3-b09f-ddfbbf3f08c4" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='OUTLOOK']/element[@controlid='103']/element[@controlid='258']/container[@caption='']/button[@text='&amp;Send']
+			</item>
+			<item name="btnYes" id="08ee2dd9-a599-40c1-bf58-93bbaa4ee2c0" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='OUTLOOK']/button[@text='&amp;Yes']
+			</item>
+			<item name="txtSubject" id="52ac5dbc-6862-4e7c-9dc0-e681130ff914" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='OUTLOOK']/container[@caption='']/element[@class='AfxWndW']/element/container[@caption='']/element[@controlid='4101']/text[@accessiblename='Subject']
+			</item>
+			<item name="triInbox" id="47d14653-719c-47a9-9b2c-8998db0f6d49" searchtimeout="30000ms" capname="treeitem" addcaps="treeitem,accessible">
+				/form[@processname='OUTLOOK']/container[@caption='NUIDocumentWindow' and @controlid='103']/container/container[2]/container/tree/container/treeitem[@accessiblename='Outlook Data File']/treeitem[@childindex=0]
+			</item>
+			<item name="btnCloseX" id="ad7edf3e-1bdd-4b24-9cb5-27d020c55a44" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='OUTLOOK']/container[@caption='MsoDockTop']/container/element/element/container/button[@accessiblename='Close']
+			</item>
+			<item name="triJunk" id="1662552d-7438-4629-8d35-2262d590c8cf" searchtimeout="30000ms" capname="treeitem" addcaps="treeitem,accessible">
+				/form[@processname='OUTLOOK']/container[@caption='NUIDocumentWindow' and @controlid='103']/container/container[2]/container/tree/container/treeitem[@accessiblename~'^*_pop@automation*']/treeitem[@accessiblename='Junk E-mail']
+			</item>
+			<item name="btnInsert" id="8da9d0bf-578f-43ca-b8cb-d63be4da94e3" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='OUTLOOK']/button[@accessiblename='Insert' or @text='In&amp;sert']
+			</item>
+			<item name="txtPath" id="02f46434-e22c-42b6-b405-2824a59eaddd" searchtimeout="30000ms" capname="text" addcaps="text,nativewindow">
+				/form[@processname='OUTLOOK']/?/text[@controlid='1148' or @controlid='54']
+			</item>
+			<item name="btnFile" id="819d5643-41cd-4b12-81ae-7559b0a794e2" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='OUTLOOK']/container[@caption='MsoDockTop']/container/element/element/container/button[@childindex=7]
+			</item>
+			<item name="btnAccountSettings" id="f7b1a2d6-6147-446d-8f8e-91cc5269d453" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='OUTLOOK']/element[@class='FullpageUIHost']/container/container/container[@accessiblename='Backstage view']/container/container/container[@accessiblename='Account Settings']/button[@accessiblename='Account Settings...']
+			</item>
+			<item name="mnuAccountSettings" id="4ff688a1-52b2-44ed-a1d7-a5ada3c4e933" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+				/form[@processname='OUTLOOK']/container/contextmenu/container/container/menuitem[@accessiblename='Account Settings...']
+			</item>
+			<item name="celImap" id="cd8a9d46-be04-4476-9fe9-ee1c2320c4c0" searchtimeout="30000ms" capname="cell" addcaps="cell">
+				/form[@processname='OUTLOOK']/container[@caption='' and @class='#32770' and @instance='0']/table/row[@index='0' or @index='1']/cell[@text~'^*imap*']
+			</item>
+			<item name="celPop" id="e6e3d29a-ea06-49b9-b099-088fc259468a" searchtimeout="30000ms" capname="cell" addcaps="cell">
+				/form[@processname='OUTLOOK']/container[@caption='' and @class='#32770' and @instance='0']/table/row[@index='1' or @index='0']/cell[@text~'^*pop*']
+			</item>
+			<item name="ckbTestMail" id="9d8b83c3-5dc5-4dd7-b831-0a82bc4fe814" searchtimeout="30000ms" capname="checkbox" addcaps="checkbox,nativewindow">
+				/form[@processname='OUTLOOK']/container/checkbox[@childindex=26]
+			</item>
+			<item name="btnMoreSettings" id="06c9caf6-a166-43fd-87b2-7a30de7a531b" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='OUTLOOK']/container/button[@childindex=33]
+			</item>
+			<folder name="Advanced" id="a5327ad6-0a61-4cf7-bb0b-9933377f6c3d" searchtimeout="30000ms" capname="container" addcaps="container,nativewindow" isrooted="True" usecache="True">
+				<item name="btnSelect" id="c8435fab-7e8b-4c59-b26e-0c23b3ae43a5" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='OUTLOOK']/container[@caption='Advanced']/element[@controlid='254']/button[@accessiblename='Open']
+				</item>
+				<item name="ckbEnablePOP" id="20a423e3-f281-4b9d-92a0-4b83790037b2" searchtimeout="30000ms" capname="checkbox" addcaps="checkbox,nativewindow">
+					/form[@processname='OUTLOOK']/container[@caption='Advanced']/checkbox[@childindex=5]
+				</item>
+				<item name="btnDefault" id="0c80e5a9-ce72-4285-8814-5ebc3d57c506" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='OUTLOOK']/container[@caption='Advanced']/button[@text='Use &amp;Defaults']
+				</item>
+				<basepath>
+					/form[@processname='OUTLOOK']/container[@caption='Advanced']
+				</basepath>
+			</folder>
+			<item name="lsiSSL" id="fa94730b-1363-4a46-9774-c4a40be52dd0" searchtimeout="30000ms" capname="listitem" addcaps="listitem,accessible">
+				/form[@processname='OUTLOOK']/listitem[@accessiblename='SSL']
+			</item>
+			<item name="btnOK" id="8ceff1db-748a-421d-948e-d4b8c3232c5c" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='OUTLOOK']/button[@childindex=6]
+			</item>
+			<item name="btnNext" id="4189afae-b2ae-4ebd-a3b9-04c532ab069d" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='OUTLOOK']/button[@childindex=4]
+			</item>
+			<item name="btnClose" id="583fde72-a070-4c16-9143-ae794dba619f" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='OUTLOOK']/button[@childindex=3]
+			</item>
+			<item name="lsiNone" id="13341c08-17fa-4cbe-a6ad-808b704f142f" searchtimeout="30000ms" capname="listitem" addcaps="listitem,accessible">
+				/form[@processname='OUTLOOK']/listitem[@childindex=0]
+			</item>
+			<item name="btnPopOK" id="99347a2a-8d27-4e6f-bdcf-d8731505a141" searchtimeout="30000ms" capname="button">
+				/form[@processname='OUTLOOK']/button[@text='OK']
+			</item>
+			<item name="Vistax86PopAtautomationLocal" id="1c7a23a7-42b0-49bb-bc9e-535596d3bd53" searchtimeout="30000ms" capname="cell" addcaps="cell">
+				/form[@processname='OUTLOOK']/container[@caption='' and @class='#32770' and @instance='0']/table/row[@index='0']/cell[@text~'^vistax86_pop@automation\.l']
+			</item>
+			<basepath>
+				/form[@processname='OUTLOOK']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAAk9JREFUOE+lk9tL02Ech/eXdBFRUhEZBFF08Lhy5oWEFWFXBZEEEpQZ
+gVRowUBLClI7CGUnKypI6kKwIvOQI23OuTbnPEzdpm5zh99pv6d3W6AG2oUvPJffz+d5vy+vwbDW
+09hq4d4bJ7Utg9Q0/+Jqk4Vz5i5OVfdQWvWNkgttFJe/pqjs2TIOn32K8VglhvqXdpo7NJraNe60
+yZjfRql+EaLqyRyVzQHO3/dTdneK03UTnDR7OF7j5sg1F4UVFtZl7MJQ12Kh/l2Q2+8jXH40zZlb
+Hkpvujhxw8nR6w6Kq+wUXRnCVGnj0KVBjBVW8i9aySrvYUOmEUNt4ysCwTiRmMaCIBxVCUUUgoK5
+cBpfUME7K+PxyTi9ErZxiW6bl83bd4qAhlZWO7oOigpRSWc+mmA6pDEWULG6fWzaugPDw+cfV5zX
+EiApOgvxBLMLGlPzGh6/wu8phd7h/wQkRLMshlPNkQQzonlcNLumFWwTMl221QKS2poYlnVCsQT+
+sMbknIbbp2CfVBgYlflqFQFbVrjCorrOrBhOq6s4hLp1TKZvRKKjf4WAlLqaVE+k1YNpdWdKXeGn
+W6bbKdFuSQZkLl9iauMaxMS9g0vVZ9Lq/R6JXpdEpz3Op75/AsQs6t+th+M6gdTWVUaT6t5F9e+O
+OF9sMT70+tiYNHiw5BlFOZJ483AcEQCT8+D26wx7NQbGNH6MqHQ6FD4PyamA9RnbxF9oeEz+wULy
+jCZyBTmCbEFWvokDeSb25xawT7A3p4A92Wl2Z6XJKyxhrZ/Z8Af+1+a2LuSr2AAAAABJRU5ErkJg
+gg==
+			</icon>
+		</appfolder>
+		<appfolder name="EAV" id="3e728aaf-c631-4eff-80a4-ef7a6dd29ca6" searchtimeout="30000ms" capname="form" addcaps="form,nativewindow" isrooted="True" usecache="True">
+			<item name="txtHeader" id="20f6e4d7-3484-4690-8258-e8ba65ee7197" searchtimeout="30000ms" capname="text" addcaps="text,accessible">
+				/form[@processname='egui']/element/element[@controlid='4']/text/text[@childindex=5]
+			</item>
+			<item name="btnOK" id="b047d1f4-42de-4519-842d-a0fb3f15d35b" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@childindex=0]
+			</item>
+			<item name="btnClose" id="2bfd3e16-a1f5-4f67-8f0c-ebcad1a50567" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='egui']/element/element[@controlid='5']/element[@class='ESET Panel Standalone Window' and @instance='0']/element/element/text/button[@childindex=14]
+			</item>
+			<item name="btnMaximize" id="eefcda6c-34fc-4ee4-a403-32393eedc5f3" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='egui']/titlebar/button[@accessiblename='Maximize']
+			</item>
+			<item name="btnCloseX" id="4c0d028a-c0a6-40a6-bfed-ff062ed1c32f" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+				/form[@processname='egui']/titlebar/button[@accessiblename='Close']
+			</item>
+			<folder name="mnuMenuBar" id="822a77a3-b7d1-4a36-9524-176c486465e4" searchtimeout="30000ms" capname="menubar" addcaps="menubar,accessible" isrooted="True" usecache="True">
+				<item name="mnuHome" id="896c1aa1-26a8-4391-884f-5225f73eb619" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=0]
+				</item>
+				<item name="mnuComputerScan" id="ae1b0d09-0cec-4258-93a2-7da6f43dade9" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=1]
+				</item>
+				<item name="mnuUpdate" id="93277d53-7736-49c9-a789-0c33ddb07af9" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=2]
+				</item>
+				<item name="mnuSetup" id="df14ab39-200c-4399-a4d1-73971511c63b" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=3]
+				</item>
+				<item name="mnuTools" id="1eb74a60-e58f-4442-99e8-0b2ba4b0ac1b" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=4]
+				</item>
+				<item name="mnuHelpAndSupport" id="83bf826e-fc40-4527-8f05-2ee2315cc364" searchtimeout="30000ms" capname="menuitem" addcaps="menuitem,accessible">
+					/form[@processname='egui']/element/element[@controlid='2']/menubar/menuitem[@childindex=5]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='2']/menubar
+				</basepath>
+			</folder>
+			<folder name="eleComputerScan" id="03d0895b-2b63-4d78-8ab9-dc21d98cd181" searchtimeout="30000ms" capname="unknown" addcaps="unknown,nativewindow" isrooted="True" usecache="True">
+				<item name="lnkCustomScan" id="54539a29-c313-4d2a-a6fd-a4511798275d" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element/text/link[@childindex=18]
+				</item>
+				<item name="lnkScanLogs" id="0b839356-e866-4e8a-a81c-3ba8cd9502ef" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element/text/link[@childindex=36]
+				</item>
+				<item name="lnkSmartScan" id="92bf7260-a593-451f-8b40-1928c0780749" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element/text/link[@childindex=9]
+				</item>
+				<item name="lnkComputerScanSetup" id="01c252d3-05bb-432e-9888-26ce1806c08e" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element/text/link[@childindex=37]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']/element[@controlid='1']/element/element
+				</basepath>
+			</folder>
+			<folder name="ComputerScan" id="11c8c1be-fd0e-4334-b281-7c0bb6cc5465" searchtimeout="0ms" capname="unknown" isrooted="False">
+				<item name="cmbScanTargets" id="7e0b4bde-a5a4-40f5-b23c-63ebb985493d" searchtimeout="30000ms" capname="combobox" addcaps="combobox,nativewindow">
+					/form[@processname='egui']/combobox[@controlid='2063']
+				</item>
+				<item name="cmbScanProfile" id="e51142e2-7be9-45be-b3a7-b1b94689162a" searchtimeout="30000ms" capname="combobox" addcaps="combobox,nativewindow">
+					/form[@processname='egui']/combobox[@controlid='2014']
+				</item>
+				<item name="btnSetup" id="0df37b1c-c388-4162-8409-b3993574a437" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=2075]
+				</item>
+				<item name="treCustomScan" id="19b84829-b24d-4124-9652-a21f459d3c7d" searchtimeout="30000ms" capname="tree" addcaps="tree,nativewindow">
+					/form[@processname='egui']/tree[@controlid='2086']
+				</item>
+				<item name="txtPath" id="921e663b-ab38-410c-9501-f880df2a2a3d" searchtimeout="30000ms" capname="text" addcaps="text,nativewindow">
+					/form[@processname='egui']/text[@controlid='2007']
+				</item>
+				<item name="ckbScanWithoutCleaning" id="1b970915-de20-44ea-a4cc-9c2d694b795f" searchtimeout="30000ms" capname="checkbox" addcaps="checkbox,nativewindow">
+					/form[@processname='egui']/checkbox[@controlid=2024]
+				</item>
+				<item name="btnSave" id="1bd7b2da-d389-4f62-aba4-3cc0ee6c6659" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=2078]
+				</item>
+				<item name="btnScan" id="074844c8-ee1e-40a2-a442-380e6657f6ea" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=1]
+				</item>
+				<item name="btnScanAsAdministrator" id="eb821764-078e-49c2-a645-e66fc7dc914b" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=3]
+				</item>
+				<item name="btnCancel" id="132b36b4-9fc0-42f6-80b7-4217a7436ef3" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+					/form[@processname='egui']/button[@controlid=2]
+				</item>
+			</folder>
+			<folder name="eleUpdate" id="00e4279d-0e8d-4d6e-95bc-d0b10392bad3" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="True">
+				<item name="btnUpdateNow" id="ff5bc248-89bd-42ec-bee4-aaca7eb54ede" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element/element/element/element/text/button[@childindex=9]
+				</item>
+				<item name="CheckForUpdates" id="293d26fe-7519-41dc-a712-571b69414404" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element/element/element/element/text/button[@childindex=17]
+				</item>
+				<item name="btnCancelUpdate" id="ca57b1c0-60ce-4ca1-940b-378584f95934" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element/element/element/element/text/button[@accessiblename='Cancel update']
+				</item>
+				<item name="lnkDbVersion" id="5b2fe741-2ff6-4427-9128-9f9ca06bf6bf" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element/element/element/element/text/link[@accessiblename='7496 (20120919)']
+				</item>
+				<item name="lnkTroubleshoot" id="5c491293-e2d4-4a3f-a2a2-246e8aec0b67" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element/element/element/element/text/link[@childindex=7]
+				</item>
+				<item name="Enabled" id="06bcbb6f-bf14-42a9-81dc-53dd698590a3" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element/element/element/element/text/button[4]
+				</item>
+				<item name="btnOK" id="3571a84d-8d2d-4292-bc5f-712a2b935d0d" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element/element/element/element/text/button[@childindex=8]
+				</item>
+				<item name="Disabled" id="f6b765fc-9f02-40bc-8e8a-b0c8f9d1e0be" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element/element/element/element/text/button[9]
+				</item>
+				<item name="btnInstall" id="b4fc2abf-f77c-47c3-a41f-2f849388b593" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element/element/element/element/text/button[@childindex=17]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element
+				</basepath>
+			</folder>
+			<folder name="eleSetup" id="d475c0e2-7a4a-49ce-a7ab-450a6899b17b" searchtimeout="30000ms" capname="container" isrooted="True" usecache="True">
+				<item name="btnRealTimeProtect" id="f91cef5e-14b4-4bd9-b761-f99b89929b05" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=18]
+				</item>
+				<item name="btnDocumentProtection" id="ccb7c99b-1e69-48c6-b079-6231ef938b43" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=25]
+				</item>
+				<item name="btnRemovableMediaProtection" id="6fe4bd3e-377d-42e1-95a6-5f2bd1d7ca02" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=32]
+				</item>
+				<item name="btnHips" id="94480367-0cf1-431b-bca6-63be85b7ca98" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=39]
+				</item>
+				<item name="btnGamerMode" id="4b713f79-bae8-4380-9613-ecc9541529ba" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=46]
+				</item>
+				<item name="btnAntiStealthProtection" id="4a408783-1856-4f21-ac9d-cf80055cf752" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=53]
+				</item>
+				<item name="btnWebAccessProtection" id="969419a9-cf50-461f-8c1f-bb6e5f7440d6" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=72]
+				</item>
+				<item name="btnEmailProtection" id="fa3ab8f1-8be9-4c85-b888-82ed46e2d6d4" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=79]
+				</item>
+				<item name="btnAntiPishingProtection" id="a2e617c9-d478-43ea-a1f5-3fbfd4921880" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=86]
+				</item>
+				<item name="lnkProductActivation" id="199634c2-4a59-4c19-bb7d-ea8a2d59862a" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=87]
+				</item>
+				<item name="lnkImportAndExportSettings" id="bdaca9ba-7d0d-4ab4-8a93-0fc860a400fb" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=88]
+				</item>
+				<item name="lnkEnterAdvancedSetup" id="9b8ec372-0664-4a5c-9b00-fb769266622a" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=89]
+				</item>
+				<item name="btnWebAccessProtectionSrv" id="0b14a613-579e-4903-b664-f19f06402d20" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[8]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container
+				</basepath>
+			</folder>
+			<folder name="eleTools" id="0d2bdf1e-c87f-4193-bdbf-4deda3cd297e" searchtimeout="30000ms" capname="container" isrooted="True" usecache="True">
+				<item name="lnkLogFiles" id="838f1bd6-deff-45cb-9e8d-3eeb91115920" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=9]
+				</item>
+				<item name="lnkScheduler" id="a544677d-8267-48a9-af70-0149d9712f99" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=17]
+				</item>
+				<item name="lnkProtectionStatistics" id="1fd8e72c-ef35-4d13-82df-5e787f577855" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=26]
+				</item>
+				<item name="lnkQuarantine" id="648b67fc-e731-4413-bc6a-ed470b597885" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=34]
+				</item>
+				<item name="lnkWatchActivity" id="bd173566-c96b-45c7-8fc8-98091082c52d" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=43]
+				</item>
+				<item name="lnkEsetSysInspector" id="482a75de-5e08-4f20-972b-130710574325" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=51]
+				</item>
+				<item name="lnkRunningProcesses" id="63d38df3-1674-4dd7-8ce1-d911c8a6877e" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=60]
+				</item>
+				<item name="lnkNetworkConnections" id="7f835f25-20f0-45a2-a7a1-2cbea19bc95b" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=68]
+				</item>
+				<item name="lnkSubmitFileForAnalysis" id="a581b472-185b-454f-b158-24e1468fe1d9" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=78]
+				</item>
+				<item name="lnkEsetSysRescue" id="21dcb2e6-ed7f-4f72-83bd-19afd4564f60" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=86]
+				</item>
+				<item name="lnkEsetSocialMediaScanner" id="bbf7c939-f234-4b8b-848c-209a2d7596d8" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=95]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container
+				</basepath>
+			</folder>
+			<folder name="eleHelpAndSupport" id="91549fbc-c0c0-4c1e-9e3f-4780938f37e3" searchtimeout="30000ms" capname="container" isrooted="True" usecache="True">
+				<item name="lnkOpenHelp" id="18b03dfd-728a-4271-abaa-4cb71626d3c5" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=6]
+				</item>
+				<item name="lnkFindQuickSolution" id="ea046f39-d101-4c23-9e5a-89eaf7133c16" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=7]
+				</item>
+				<item name="lnkSearchKnowledgeBase" id="acf327c8-daf4-4510-8ca2-b5ccedf8deb6" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=8]
+				</item>
+				<item name="btnChangeLicense" id="4f58d269-f1ca-437a-b1c2-f17ef2276474" searchtimeout="30000ms" capname="button" addcaps="button,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/button[@childindex=15]
+				</item>
+				<item name="lnkCustomerCareRecomended" id="52e5ff41-f167-49d0-aad5-5e9b28866d35" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=23]
+				</item>
+				<item name="lnkCustomerCareWebForm" id="0a35fa5b-bcda-4f5d-80b8-31c5545cfa7c" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=24]
+				</item>
+				<item name="lnkLatestNews" id="277a5457-3bc4-4b3c-960b-25308e94bac7" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=25]
+				</item>
+				<item name="lnkAboutESS6" id="a81eec93-719e-46cf-a09c-123f69f9e1ab" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=32]
+				</item>
+				<item name="lnkVerifyLicenseValidity" id="88b05e06-b13b-421d-825e-f728c3dc67c3" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=33]
+				</item>
+				<item name="lnkThreatEncyclopedia" id="a217beb2-b78f-4bcb-b1a0-ad15cff3398d" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=34]
+				</item>
+				<item name="lnkEset" id="d0c9a0fa-7f0b-4ae4-a6df-1595855214b5" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container/text/link[@childindex=35]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/container
+				</basepath>
+			</folder>
+			<folder name="eleLog" id="efa1deda-63d8-457f-8980-67bd14aa1bc4" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="True">
+				<item name="celScanner" id="acf3c7d8-bc85-4065-8b58-271806b1fa32" searchtimeout="30000ms" capname="cell" addcaps="cell">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/table/row[@index=0]/cell[@columnindex=1]
+				</item>
+				<item name="celThreat" id="2ab59fef-0829-49bc-889c-3ea894bf1066" searchtimeout="30000ms" capname="cell" addcaps="cell">
+					/form[@processname='egui']/element/element[@controlid='5']/element/element/table/row[@index=0]/cell[@columnindex=4]
+				</item>
+				<basepath>
+					/form[@processname='egui']/element/element[@controlid='5']
+				</basepath>
+			</folder>
+			<item name="celNrOfCleaned" id="1773e36d-68f3-4c23-897d-23e6ac76c49a" searchtimeout="30000ms" capname="cell" addcaps="cell">
+				/form[@processname='egui']/element/table/row[@index='10']/cell[@columnindex=0]
+			</item>
+			<item name="lnkShowLog" id="babb13e4-d94f-41fa-ad9d-20b0f7e99026" searchtimeout="30000ms" capname="link" addcaps="link,accessible">
+				/form[@processname='egui']/element/element[@controlid='5']/element[@class='ESET Panel Standalone Window' and @instance='0']/element/element/text/link[@childindex=12]
+			</item>
+			<item name="btnUpgradeYes" id="e8d51f77-bc9a-4898-b070-b704972740d0" searchtimeout="30000ms" capname="button" addcaps="button,nativewindow">
+				/form[@processname='egui']/button[@childindex=0]
+			</item>
+			<basepath>
+				/form[@processname='egui']
+			</basepath>
+			<icon>
+				iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAKKSURBVDhPlVNLaFNREM2ygi0uBF2ICP6ogktR
+dNWWVBFJBTG4syIt1IVbXaibGDdNVy0VCi0mllpjTLU1tcEmSszLs8GYTymEfJqXmNRoalMwr0le
+kuOdS1pMcOOF4d0355y5c+fOqFRNSxRFtdvtNgiC4GHfPFl9byCsmb/z7/F4DjHiYCgUKqRSKWxu
+bkJRFG60Jx9hxCFuQ6C62BSPxyHLMrbXb3kLha3Szj9hxGFBTA1BKCoBlUqFk/3SdxjdIYzbXJhY
+9MIoLONr7BvHiFMPMsizoHtRamxxwkvHEvTmRdiiGXyUfsAZy2A+uoZHUwuwuP2cQ1zS8JpQwZLJ
+JAfEeAaasTlM+qKYjmVhlbIwR9Owpjdg8oahGZ/H59U1ziUNaVVU4Xw+z523TAtoH57DiPQLepsD
+fXcfoP/eQ+hm32M0tYGTT2zoHX3FuaQhLWWQL5dKqLBqn74/hja9GVpnEOreAXRc7+WmvjnAfa26
+FzirM/I6kIa0PECpWIRSLqHzmRPHF5Zx2RPGvo4etJ25gFZm+zuvoEcM49i7ELqmXYxbBml4AEpj
+fX2dJVXFHbsPu4btOOeK4erkGxzovoaDF7XoMVpx/lMcu0fsuP1aYNwaSLN9BUMikUCtVoU3ksKe
+xxaccifQFcziRjAJrTcOTTSPEx+i2Ds0i6WwhFq1CtLwItJTBIPBAnUbqgqmViQcmfmClqci2oUk
+jroktEx4cNjixfMw64VahXcmaXZamxopEonw96UgvvRP9FkEdL/145JjBf0zIryrGY4Rh7ikaZ4D
+EwH8SZUyJxe3ZBSptdmp7Jk4Vhc3tjJF2h6mQCBQoPvlcjnI7DQy2pOPsH8O09+T9b/j/Ad7CszQ
+ZWFD+QAAAABJRU5ErkJggg==
+			</icon>
+		</appfolder>
+		<basepath/>
+	</rootfolder>
+	<variables/>
+</repository>

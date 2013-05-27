@@ -1,0 +1,20 @@
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuUpdate 30000
+ClickElement ESS/mnuMenuBar/mnuUpdate
+
+# check version of virus signture database
+# Delay 1000
+# {version} = GetElementAttribute ESS/eleUpdate/lnkDbVersion Text
+{version} = "7497 (20120921)"
+
+# update virus signature
+WaitForObject ESS/eleUpdate/btnUpdateNow 30000
+ClickElement ESS/eleUpdate/btnUpdateNow
+
+# assert test if version didnt change
+WaitForObject ESS/eleUpdate/btnUpdateNow 300000
+Assert GetElementAttribute ESS/eleUpdate/lnkDbVersion Text isnot {version}
+
+# return app to basic state
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX

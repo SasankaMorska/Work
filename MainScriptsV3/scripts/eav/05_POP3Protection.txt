@@ -1,0 +1,39 @@
+# local delay to be safe
+SetLocalDelay 1500
+
+# send infected email to pop account
+RunParam {@send_mail} {@mail_pop}
+Delay 10000
+
+# check emails with email client with no ssl connection
+# to test pop3 protocol filter
+Run {@outlook}
+
+# in case of unregistered version, close registration prompt
+Case
+  When WaitForObject frmOutlook2010/btnCancel 50000 is True
+    ClickElement frmOutlook2010/btnCancel
+
+# receive mails
+WaitForObject frmOutlook2010/btnSendReceive 50000
+ClickElement frmOutlook2010/btnSendReceive
+
+# eset pop-up should appear
+Delay 10000
+ClickElement frmOutlook2010/btnCloseX
+
+# check ess/eav logs
+Run {@app}
+WaitForObject EAV/mnuMenuBar/mnuTools 30000
+ClickElement EAV/mnuMenuBar/mnuTools
+
+WaitForObject EAV/eleTools/lnkLogFiles 30000
+ClickElement EAV/eleTools/lnkLogFiles
+
+WaitForObject EAV/eleLog/celScanner 30000
+Assert GetElementAttribute EAV/eleLog/celScanner Text is "POP3 filter"
+Assert GetElementAttribute EAV/eleLog/celThreat Text is "Eicar test file"
+
+# return application to basic state
+ClickElement EAV/mnuMenuBar/mnuHome
+ClickElement EAV/btnCloseX

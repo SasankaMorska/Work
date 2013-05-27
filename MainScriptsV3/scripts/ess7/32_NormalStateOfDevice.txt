@@ -1,0 +1,8 @@
+# set device in Anti Theft portal as normal / ok state
+#
+# - first, computer have to be logged in phantom account
+# - from other computer access AT portal, set device as normal
+# - wait 5 minutes and check if phantom user was automatically
+#   logged of from specified device.
+# - check if phantom user is not logged
+#

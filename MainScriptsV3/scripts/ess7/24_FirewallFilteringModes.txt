@@ -1,0 +1,214 @@
+# enable filtering in advanced menu
+Run {@app}
+
+WaitForObject ESS/mnuMenuBar/mnuSetup 30000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+
+WaitForObject frmAdvancedSetup/treAdvancedSetup 40000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->0
+
+# sometime selecting by index doesnt work
+# first select element by clicking, because sending keystrokes does not
+# work without this.
+
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Down>
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Down>
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Down>
+# SelectByIndex frmAdvancedSetup/Firewall/cmbFilteringMode 3
+
+ClickElement frmAdvancedSetup/btnOK
+
+# access webpage
+RunParam {@firefox} "http://reddit.com"
+Delay 3000
+
+# new rule created popup
+Assert WaitForObject ESS/txtPopup 30000 is True
+WaitForObject frmFirefox/btnCloseX 40000
+ClickElement frmFirefox/btnCloseX
+
+# wait for some notifications to disapear ?
+# Delay 20000
+
+# change filtering mode to Automatic
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+WaitForObject frmAdvancedSetup/treAdvancedSetup 40000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->0
+
+# select Automatic Filtering Mode
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Up>
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Up>
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Up>
+ClickElement frmAdvancedSetup/btnOK
+
+# page loaded correctly in firefox?
+RunParam {@firefox} "http://reddit.com"
+WaitForObject frmFirefox 10000
+Delay 10000
+{ff} = GetElementAttribute frmFirefox Title
+Assert {ff} likenot "Problem"
+ClickElement frmFirefox/btnCloseX
+
+# page loaded correctly in opera?
+RunParam {@opera} "http://reddit.com"
+
+# if opera asks about default browser, cancel...
+When WaitForObject frmOpera/ckbDontShowAgain 30000 is True
+  Check frmOpera/ckbDontShowAgain
+  ClickElement frmOpera/btnNoDefaultBrowser
+
+WaitForObject frmOpera 10000
+Delay 10000
+{op} = GetElementAttribute frmOpera Title
+Assert {op} likenot "Error"
+ClickElement frmOpera/btnCloseX
+
+# page loaded correctly in chrome?
+RunParam {@chrome} "http://reddit.com"
+WaitForObject frmChrome 10000
+Delay 10000
+{ch} = GetElementAttribute frmChrome Title
+Assert {ch} likenot ".*not.*"
+ClickElement frmChrome/btnCloseX
+
+# change filtering mode to Interactive
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+WaitForObject frmAdvancedSetup/treAdvancedSetup 40000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->0
+
+# select Automatic Filtering Mode
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Down>
+ClickElement frmAdvancedSetup/btnOK
+
+
+# 1. browser -> no notification
+RunParam {@firefox} "http://reddit.com"
+Assert WaitForObject frmFirewallNotification/btnDeny 30000 is NIL
+
+# check browser title
+WaitForObject frmFirefox 30000
+Delay 10000
+{ff} = GetElementAttribute frmFirefox Title
+Assert {ff} likenot "Problem"
+
+# close browser 1
+WaitForObject frmFirefox/btnCloseX 20000
+ClickElement frmFirefox/btnCloseX
+
+# use 2. browser -> notification
+RunParam {@opera} "http://reddit.com"
+
+# notification shoud pop up -> set new rule, deny opera
+WaitForObject frmFirewallNotification 30000
+Check frmFirewallNotification/ckbRememberAction
+ClickElement frmFirewallNotification/btnDeny
+
+WaitForObject frmOpera 30000
+Delay 10000
+{op} = GetElementAttribute frmOpera Title
+Assert {op} like "Error"
+ClickElement frmOpera/btnCloseX
+
+# change filtering mode to Policy-Based
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+WaitForObject frmAdvancedSetup/treAdvancedSetup 40000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->0
+
+# select Policy-Based Mode
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Down>
+ClickElement frmAdvancedSetup/btnOK
+
+# Check how firewall behaves
+# 1. browser -> no notification
+RunParam {@firefox} "http://reddit.com"
+Assert WaitForObject frmFirewallNotification/btnDeny 30000 is NIL
+
+# check browser title
+WaitForObject frmFirefox 30000
+Delay 10000
+{ff} = GetElementAttribute frmFirefox Title
+Assert {ff} likenot "Problem"
+
+# close browser 1
+WaitForObject frmFirefox/btnCloseX 20000
+ClickElement frmFirefox/btnCloseX
+
+# use 2. browser -> Web page denied
+RunParam {@opera} "http://reddit.com"
+
+WaitForObject frmOpera 30000
+Delay 10000
+{op} = GetElementAttribute frmOpera Title
+Assert {op} like "Error"
+ClickElement frmOpera/btnCloseX
+
+# use 3. browser -> Blocked
+RunParam {@chrome} "http://reddit.com"
+
+WaitForObject frmChrome 30000
+Delay 10000
+{ch} = GetElementAttribute frmOpera Title
+Assert {ch} like ".*not.*"
+ClickElement frmOpera/btnCloseX
+
+# change filtering mode to Automatic
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+WaitForObject frmAdvancedSetup/treAdvancedSetup 40000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 1->0
+
+# select Automatic Mode
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+ClickElement frmAdvancedSetup/Firewall/cmbFilteringMode
+
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Up>
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Up>
+SendKey frmAdvancedSetup/Firewall/cmbFilteringMode <Up>
+ClickElement frmAdvancedSetup/btnOK
+
+
+# Check how firewall behaves
+# 1. browser -> no notification
+RunParam {@firefox} "http://reddit.com"
+Assert WaitForObject frmFirewallNotification/btnDeny 30000 is NIL
+
+# check browser title
+WaitForObject frmFirefox 30000
+Delay 10000
+{ff} = GetElementAttribute frmFirefox Title
+Assert {ff} likenot "Problem"
+
+# close browser 1
+WaitForObject frmFirefox/btnCloseX 20000
+ClickElement frmFirefox/btnCloseX
+
+# use 2. browser -> Web page denied
+RunParam {@opera} "http://reddit.com"
+
+WaitForObject frmOpera 30000
+Delay 10000
+{op} = GetElementAttribute frmOpera Title
+Assert {op} like "Error"
+ClickElement frmOpera/btnCloseX
+
+# use 3. browser -> OK
+RunParam {@chrome} "http://reddit.com"
+
+WaitForObject frmChrome 30000
+Delay 10000
+{ch} = GetElementAttribute frmOpera Title
+Assert {ch} likenot ".*not.*"
+ClickElement frmOpera/btnCloseX

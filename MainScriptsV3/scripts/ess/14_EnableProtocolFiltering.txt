@@ -1,0 +1,17 @@
+# enable protocol filtering
+Run {@app}
+
+WaitForObject ESS/mnuMenuBar/mnuSetup 30000
+ClickElement ESS/mnuMenuBar/mnuSetup
+SendKey ESS/mnuMenuBar/mnuSetup <F5>
+
+WaitForObject frmAdvancedSetup/treAdvancedSetup 30000
+SelectTreeByIndex frmAdvancedSetup/treAdvancedSetup 2->2
+
+WaitForObject frmAdvancedSetup/ProtocolFiltering/ckbEnableProtocolFiltering 30000
+Check frmAdvancedSetup/ProtocolFiltering/ckbEnableProtocolFiltering
+ClickElement frmAdvancedSetup/btnOK
+
+WaitForObject ESS/mnuMenuBar/mnuHome 30000
+ClickElement ESS/mnuMenuBar/mnuHome
+ClickElement ESS/btnCloseX

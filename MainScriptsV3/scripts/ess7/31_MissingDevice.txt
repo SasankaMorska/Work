@@ -1,0 +1,84 @@
+Run {@app}
+WaitForObject ESS/mnuMenuBar/mnuSetup 10000
+ClickElement ESS/mnuMenuBar/mnuSetup
+
+# open up AT form
+WaitForObject ESS/eleSetup/btnAntiTheft 30000
+ClickElement ESS/eleSetup/btnAntiTheft
+Delay 1000
+ClickElement cmuMenu/mnuSetup
+
+# enter email address eset.testinglab12@gmail.com
+WaitForObject ESS/AntiTheftMain/txtEmail 10000
+InputText ESS/AntiTheftMain/txtEmail "eset.testinglab12@gmail.com"
+
+# enter password "testlab123"
+ClickElement ESS/AntiTheftMain/txtPassword
+SendKey ESS/AntiTheftMain/txtPassword <t>
+SendKey ESS/AntiTheftMain/txtPassword <e>
+SendKey ESS/AntiTheftMain/txtPassword <s>
+SendKey ESS/AntiTheftMain/txtPassword <t>
+SendKey ESS/AntiTheftMain/txtPassword <l>
+SendKey ESS/AntiTheftMain/txtPassword <a>
+SendKey ESS/AntiTheftMain/txtPassword <b>
+SendKey ESS/AntiTheftMain/txtPassword <D1>
+SendKey ESS/AntiTheftMain/txtPassword <D2>
+SendKey ESS/AntiTheftMain/txtPassword <D3>
+
+# sign in
+ClickElement ESS/AntiTheftMain/btnSignIn
+
+# default device name association
+WaitForObject ESS/AntiTheftMain/btnNext 10000
+ClickElement ESS/AntiTheftMain/btnNext
+
+WaitForObject ESS/AntiTheftMain/txtDevice 60000
+Assert Trim GetElementAttribute ESS/AntiTheftMain/txtDevice TextValue is "Device association completed"
+
+WaitForObject ESS/AntiTheftMain/btnFinish 30000
+ClickElement ESS/AntiTheftMain/btnFinish
+
+# close app
+ClickElement ESS/btnCloseX
+
+# firefox is started up -> report this device as missing
+
+WaitForObject frmFirefox/txtStolen1 60000
+ClickElement frmFirefox/txtStolen1
+
+WaitForObject frmFirefox/txtStolen2 30000
+ClickElement frmFirefox/txtStolen2
+
+WaitForObject frmFirefox/txtStolen3 30000
+ClickElement frmFirefox/txtStolen3
+
+Delay 20000
+
+ClickElement frmFirefox/btnCloseX
+
+# update registry to autologin with empty password
+{a} = Concat "/S " {@autologin_registry}
+RunParam "c:/windows/regedit.exe" {a}
+
+Delay 180000
+
+# executing check on remote machine
+# use command:
+# wmic /node: 10.1.190.xx computersystem get username
+#
+# host should be IP address of machine, but this works too
+{check_file_temp} = Concat "c:/utils/" {@machine}
+{check_file} = Concat {check_file_temp} "_ok.bat"
+{host} = Concat "--host " {@machine}
+{name} = Concat " --name " {@machine}
+
+{args} = Concat {host} {name}
+
+# check if user is logged by running this script
+RemoteRunParam "http://10.1.190.10:11000" "C:/utils/checkuser.exe" {args}
+
+Delay 10000
+
+# if normal user is NOT logged this file WILL execute
+Assert RemoteRun "http://10.1.190.10:11000" {check_file} is True
+

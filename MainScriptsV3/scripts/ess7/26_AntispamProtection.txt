@@ -1,0 +1,12 @@
+Run {@outlook}
+WaitForObject frmOutlook2010/btnSendReceive 50000
+
+RunParam {@send_viagra} {@mail_pop}
+Delay 20000
+
+ClickElement frmOutlook2010/btnSendReceive
+ClickElement frmOutlook2010/triJunk
+
+Assert GetElementAttribute frmOutlook2010/txtSubject TextValue is "[SPAM] Viagra"
+ClickElement frmOutlook2010/btnCloseX
+

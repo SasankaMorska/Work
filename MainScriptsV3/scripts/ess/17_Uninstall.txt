@@ -1,0 +1,33 @@
+# local delay
+SetLocalDelay 1500
+
+Run {@uninstall}
+
+# wait until this small "preparing for install" window is gone
+Delay 5000
+
+WaitForObject EssSetup/btnNext 30000
+ClickElement EssSetup/btnNext
+
+WaitForObject EssSetup/btnRemoveInstallation 20000
+ClickElement EssSetup/btnRemoveInstallation
+
+WaitForObject EssSetup/ckbOtherReason 20000
+Check EssSetup/ckbOtherReason
+
+# one additional click because next button doesn't get enabled
+ClickElement EssSetup/ckbOtherReason
+ClickElement EssSetup/btnQuestionNext
+
+WaitForObject EssSetup/btnRemove 30000
+ClickElement EssSetup/btnRemove
+
+# WaitForObject doesnt work because of lost connectivity ?
+Delay 300000
+
+WaitForObject EssSetup/btnFinish 120000
+ClickElement EssSetup/btnFinish
+
+# dont want to restart now
+WaitForObject EssSetup/btnNo 30000
+ClickElement EssSetup/btnNo
